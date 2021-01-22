@@ -3,14 +3,14 @@
 
     <div class="topbar d-flex justify-content-between">
       <div class="social-icons">
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-instagram"></i>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
 
       <div class="sign-in">
-        <span class="mr-2">Sign in</span>
-        <i class="fas fa-user"></i>
+        <a href="#"><span class="mr-2">Sign in</span>
+        <i class="fas fa-user"></i></a>
       </div>
     </div>
 
@@ -79,7 +79,7 @@ export default {
   color: var(--light-blue-theme);
 }
 
-.sign-in {
+.sign-in a {
   padding-right: 20px;
   color: var(--light-blue-theme);
 }
@@ -91,7 +91,7 @@ export default {
   background: linear-gradient(to right,rgba(52, 0, 64, 0.301), rgba(52, 0, 64, 0.301)), url("../assets/navbar-bg.svg");
   background-size: cover;
   background-color: var(--main-purple-theme);
-  color: var(--white);
+  color: var(--light-blue-theme);
   position: relative;
   z-index: 1;
 }
@@ -102,7 +102,7 @@ export default {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #fff;
+  color: var(--light-blue-theme);
   font-size: 1.1rem;
   font-weight: 500;
   padding: 20px;
