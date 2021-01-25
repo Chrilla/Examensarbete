@@ -28,6 +28,7 @@ export default {
     background-color: var(--main-purple-theme);
     height: 1200px;
     margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 </style>

@@ -11,6 +11,16 @@
       </div>
     </div>
     
+  <NewsletterBanner/>
+
+<div class="container">
+  <UpcomingFixtures/>
+  <LatestResults/>
+</div>
+
+  <ForumBanner/>
+  <CardDeck/>
+
   </div>
   
 </template>
@@ -20,13 +30,23 @@
 import News from '@/components/News.vue'
 import Table from '@/components/Table.vue'
 import PopularNews from '@/components/PopularNews.vue'
+import NewsletterBanner from '@/components/NewsletterBanner.vue'
+import UpcomingFixtures from '@/components/UpcomingFixtures.vue'
+import LatestResults from '@/components/LatestResults.vue'
+import ForumBanner from '@/components/ForumBanner.vue'
+import CardDeck from '@/components/CardDeck.vue'
 
 export default {
   name: 'Home',
   components: {
     News,
     Table,
-    PopularNews
+    PopularNews,
+    NewsletterBanner,
+    UpcomingFixtures,
+    LatestResults,
+    ForumBanner,
+    CardDeck
   }
 }
 </script>
@@ -34,7 +54,10 @@ export default {
 <style scoped>
 
 .home {
-  background-color: var(--secondary-purple-theme);
+  background: linear-gradient(to right,rgba(52, 0, 64, 0.5), rgba(52, 0, 64, 0.5)), url("../assets/home-bg-abstract.svg");
+  background-size: contain;
+  background-position: center top;
+  background-color: var(--main-purple-theme);
 }
 
 .home-bg {

@@ -2,7 +2,7 @@
 
   <div class="">
       <div class="popular-news-heading text-center px-3">Popular news</div>
-      <div class="table"></div>
+      <div class="news-bg"></div>
   </div>
 
 </template>
@@ -22,11 +22,13 @@ export default {
     padding: 14.2px 0px 14.2px 0px;
     font-weight: 600;
     font-size: 1.55rem;
+    
 }
 
-.table {
+.news-bg {
     background-color: var(--main-purple-theme);
     height: 600px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 </style>
