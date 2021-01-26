@@ -14,9 +14,9 @@
                 <h4 class="my-auto pr-3">Manchester United</h4>
                 <img src="@/assets/manutd-badge.svg" alt="">
                 <b-badge class="time-badge my-auto mx-3">
-                    <span class="pr-2">2</span>
+                    <span class="pr-3">2</span>
                     <span class="results-line"></span>
-                    <span class="pl-2">0</span>
+                    <span class="pl-3">0</span>
                 </b-badge>
                 <img src="@/assets/manutd-badge.svg" alt="">
                 <h4 class="my-auto pl-3">Manchester United</h4>

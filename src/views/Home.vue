@@ -2,7 +2,7 @@
 
   <div class="home">
 
-<div class="home-bg"></div>
+  <div class="home-bg"></div>
     <div class="container d-flex">
       <div class="col-8"><News/></div>
       <div class="col-4 table p-0">
@@ -13,10 +13,10 @@
     
   <NewsletterBanner/>
 
-<div class="container">
-  <UpcomingFixtures/>
-  <LatestResults/>
-</div>
+  <div class="container">
+    <UpcomingFixtures/>
+    <LatestResults/>
+  </div>
 
   <ForumBanner/>
   <CardDeck/>
