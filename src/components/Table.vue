@@ -2,9 +2,9 @@
 
   <div class="mt-5 pt-5">
 
-      <div class="table-heading text-center px-3">Premier League Table 2020/2021</div>
+      <div class="table-heading text-center px-3">Premier League 2020/2021</div>
       
-      <div class="table">
+      <div id="table">
 
           <div class="d-flex justify-content-between pr-4 pb-2 pt-4">
             <span class="pl-4">Club</span>
@@ -34,6 +34,14 @@
         </div>
         <hr class="mt-1 hr-between">
 
+        <div class="container"></div>
+
+        <div v-for="stat in tableStats" v-bind:key="stat.position">
+            {{stat.position}}
+            <img class="club-img" :src='stat.team.crestUrl' alt="">
+            {{stat.team.name}}
+        </div>
+
       </div>
 
   </div>
@@ -41,9 +49,28 @@
 </template>
 
 <script>
+
+import axios from 'axios'
+
 export default {
 
+    data () {
+    return {
+      tableStats: null
+    }
+  },
+
+    mounted () {
+    axios.get('https://api.football-data.org/v2/competitions/PL/standings', {
+        headers: {
+            'X-Auth-Token': 'a9dcf362aecb43138df28fb61c6c47e3',
+            "Content-Type": "application/json",
+            }
+    })
+      .then(response => (this.tableStats = response.data.standings[0].table))
+  }
 }
+
 </script>
 
 <style scoped>
@@ -57,9 +84,8 @@ export default {
     font-size: 1.2rem;
 }
 
-.table {
+#table {
     background-color: var(--main-purple-theme);
-    height: 1200px;
     margin-bottom: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     color: var(--white);
@@ -78,6 +104,10 @@ hr {
 
 .team-stats {
     padding-left: 20px;
+}
+
+.club-img {
+    height: 1.8rem;
 }
 
 </style>
