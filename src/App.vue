@@ -28,9 +28,8 @@ export default {
   --main-purple-theme: #340040;
   --secondary-purple-theme: #40004F;
   --red-theme: #F2055C;
-  --white: #fff;
-  --dark-text: #333;
   --light-blue-theme: #07F2F2;
+  --link-theme: #7FC4FD;
 }
 
 #app {

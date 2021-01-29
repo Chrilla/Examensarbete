@@ -6,16 +6,22 @@
 
     <div class="fixtures-div container pt-2 pb-3">
 
-        <hr class="mt-4 w-75" align="left">
+        <div class="row fixture-row pt-3">
 
-        <div class="row fixture-row">
-
-            <div class="fixture col-9 d-flex justify-content-center">
-                <h4 class="my-auto pr-3">Manchester United</h4>
-                <img src="@/assets/manutd-badge.svg" alt="">
-                <b-badge class="time-badge my-auto mx-3">16:00</b-badge>
-                <img src="@/assets/manutd-badge.svg" alt="">
-                <h4 class="my-auto pl-3">Manchester United</h4>
+            <div class="fixture col-9">
+                <div v-for="fixture in upcomingFixtures" v-bind:key="fixture.upcomingFixtures">
+                <div class="d-flex justify-content-between">
+                    <div class="col-5 my-auto"><span class="fixture-team">{{fixture.homeTeam.name}}</span></div>
+                    <div class="text-center">
+                        <div class="fixture-time">
+                            <span>{{fixture.utcDate.charAt(11)+""+fixture.utcDate.charAt(12)+""+fixture.utcDate.charAt(13)+""+fixture.utcDate.charAt(14)+""+fixture.utcDate.charAt(15)}}</span>
+                        </div>
+                        <small class="fixture-date text-white">{{fixture.utcDate.charAt(0)+""+fixture.utcDate.charAt(1)+""+fixture.utcDate.charAt(2)+""+fixture.utcDate.charAt(3)+""+fixture.utcDate.charAt(4)+""+fixture.utcDate.charAt(5)+""+fixture.utcDate.charAt(6)+""+fixture.utcDate.charAt(7)+""+fixture.utcDate.charAt(8)+""+fixture.utcDate.charAt(9)}}</small>
+                    </div>
+                    <div class="col-5 my-auto text-right"><span class="fixture-team">{{fixture.awayTeam.name}}</span></div>
+                </div>
+            <hr class="hr-between">
+        </div>
             </div>
 
             <div class="current-form col-3">
@@ -44,27 +50,37 @@
                 <hr class="form-hr">
             </div>
         </div>
-        
-        <div class="location text-center pt-2">
-            <span><i class="fas fa-map-marker-alt pr-2"></i>Old Trafford, <span class="city">Manchester</span></span>
-            <hr>
-        </div>
 
-        <div class="col-9 p-0 d-flex justify-content-between">
-            <a href="#"><span><i class="fas fa-arrow-left text-light pr-2"></i>Previous fixtures</span></a>
-            <a href="#"><span>Upcoming fixtures<i class="fas fa-arrow-right text-light pl-2"></i></span></a>
-        </div>
+        <a href="#"><span><i class="fas fa-arrow-left text-light pr-2 pb-4"></i>Previous fixtures</span></a>
 
     </div>
-
   </div>
 
 </template>
 
 <script>
+
+import axios from 'axios'
+
 export default {
 
+    data () {
+    return {
+      upcomingFixtures: null
+    }
+  },
+
+    mounted () {
+    axios.get('http://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED', {
+        headers: {
+            'X-Auth-Token': 'a9dcf362aecb43138df28fb61c6c47e3',
+            "Content-Type": "application/json",
+            }
+    })
+      .then(response => (this.upcomingFixtures = response.data.matches))
+  }
 }
+
 </script>
 
 <style scoped>
@@ -81,6 +97,9 @@ export default {
 .fixtures-div {
     background-color: var(--main-purple-theme);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    max-height: 495px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .fixture {
@@ -159,6 +178,24 @@ hr {
 
 .last-five {
     font-weight: 500;
+}
+
+.fixture-team {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.fixture-time {
+    font-weight: 600;
+    background-color: var(--red-theme);
+    border-radius: 0;
+    padding: 5px 15px 5px 15px;
+    font-size: 1.4rem;
+}
+
+.fixture-date {
+    font-weight: 500;
+    font-size: 0.7rem;
 }
 
 </style>

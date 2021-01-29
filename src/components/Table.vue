@@ -4,46 +4,45 @@
 
       <div class="table-heading text-center px-3">Premier League 2020/2021</div>
       
-      <div id="table">
+      <div id="table" class="pb-2 mb-3">
 
-          <div class="d-flex justify-content-between pr-4 pb-2 pt-4">
-            <span class="pl-4">Club</span>
+          <div class="table-stats d-flex justify-content-between pr-4 pb-2 pt-4">
+                <span class="pl-4 pr-2">Pos</span>
+                <span class="pr-5 mr-5">Club</span>
             <div>
-                <span class="pr-3">P</span>
-                <span class="pr-3">W</span>
-                <span class="pr-3">D</span>
-                <span class="pr-3">L</span>
-                <span class="pr-3">GD</span>
-                <span class="pr-3">Pt</span>
+                <span class="pr-2">Pts</span>
             </div>
         </div>
         <hr class="mt-1">
 
-        <div class="d-flex pr-4 pb-2">
-            <span class="pl-4">1</span>
-            <img class="pl-3" src="@/assets/manutd-badge-mini.svg" alt="">
-            <span class="pl-2">Man Utd</span>
-            <div class="team-stats">
-                <span class="pr-3">3</span>
-                <span class="pl-1 pr-3">3</span>
-                <span class="pl-1 pr-3">0</span>
-                <span class="pr-3">0</span>
-                <span class="pl-1 pr-3">10</span>
-                <span class="pl-1">9</span>
+        <div v-for="stats in tableStats" v-bind:key="stats.tableStats">
+            <div class="pl-4">
+                <span class="table-stats">{{stats.position}}</span>
+                <span class="px-2"><img class="club-img" :src='stats.team.crestUrl' alt=""></span>
+                <span class="table-stats team-name">{{stats.team.name}}</span>
+                <span class="table-stats float-right pr-4">{{stats.points}}</span>
             </div>
-        </div>
-        <hr class="mt-1 hr-between">
-
-        <div class="container"></div>
-
-        <div v-for="stat in tableStats" v-bind:key="stat.position">
-            {{stat.position}}
-            <img class="club-img" :src='stat.team.crestUrl' alt="">
-            {{stat.team.name}}
+            <hr class="hr-between">
         </div>
 
+        <div class="text-center pt-1 pb-1">
+            <router-link to="/about"><span>View full table with all statistics<i class="fas fa-arrow-right fa-xs pl-2"></i></span></router-link>
+        </div>
+
+        <!-- <div v-for="stats in tableStats" v-bind:key="stats.tableStats">
+            <span>{{stats.position}}</span>
+            <span><img class="club-img" :src='stats.team.crestUrl' alt=""></span>
+            <span>{{stats.team.name}}</span>
+            <span>{{stats.playedGames}}</span>
+            <span>{{stats.won}}</span>
+            <span>{{stats.draw}}</span>
+            <span>{{stats.lost}}</span>
+            <span>{{stats.goalDifference}}</span>
+            <span>{{stats.points}}</span>
+            <hr class="mt-1 hr-between">
+        </div> -->
+        
       </div>
-
   </div>
 
 </template>
@@ -86,7 +85,6 @@ export default {
 
 #table {
     background-color: var(--main-purple-theme);
-    margin-bottom: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     color: var(--white);
 }
@@ -95,11 +93,13 @@ hr {
     height: 1px;
     background-color: var(--white);
     opacity: 0.6;
-    width: 87%;
+    width: 88%;
 }
 
 .hr-between {
     opacity: 0.4;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .team-stats {
@@ -108,6 +108,18 @@ hr {
 
 .club-img {
     height: 1.8rem;
+}
+
+.team-name {
+    font-size: 0.9rem;
+}
+
+.table-stats {
+    font-weight: 500;
+}
+
+a span {
+color: #7FC4FD;
 }
 
 </style>
