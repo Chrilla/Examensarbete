@@ -1,51 +1,89 @@
 <template>
   
-  <div class="py-5">
+  <div class="pt-5">
 
-    <div class="news-heading pl-4">Latest results</div>
+    <div class="news-heading pl-4 d-flex justify-content-between">Latest results
+        <div v-if="loader" class="loader d-flex align-items-center justify-content-center pr-4">
+            <span class="text-white pr-3">Loading results...</span>
+            <b-spinner class="spinner" label="spinner"></b-spinner>
+        </div>
+    </div>
 
     <div class="fixtures-div container pt-2 pb-3">
 
-        <hr class="mt-4 w-75" align="left">
+            <div class="fixture pt-2" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="limit">
+                <div v-for="result in latestResults" v-bind:key="result.latestResults">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="col-4"><span class="fixture-team">{{result.homeTeam.name}}</span></div>
 
-        <div class="row fixture-row">
-
-            <div class="fixture col-9 d-flex justify-content-center">
-                <h4 class="my-auto pr-3">Manchester United</h4>
-                <img src="@/assets/manutd-badge.svg" alt="">
-                <b-badge class="time-badge my-auto mx-3">
-                    <span class="pr-3">2</span>
-                    <span class="results-line"></span>
-                    <span class="pl-3">0</span>
-                </b-badge>
-                <img src="@/assets/manutd-badge.svg" alt="">
-                <h4 class="my-auto pl-3">Manchester United</h4>
+                    <div class="d-flex">
+                        <img src="@/assets/manutd-badge.svg" alt="">
+                        <div class="text-center">
+                            <div class="fixture-time mx-4">
+                                <span class="pr-3">{{result.score.fullTime.homeTeam}}</span>
+                                <span class="score-line"></span>
+                                <span class="pl-3">{{result.score.fullTime.awayTeam}}</span>
+                            </div>
+                            <small class="fixture-date text-white">{{result.utcDate.charAt(0)+""+result.utcDate.charAt(1)+""+result.utcDate.charAt(2)+""+result.utcDate.charAt(3)+""+result.utcDate.charAt(4)+""+result.utcDate.charAt(5)+""+result.utcDate.charAt(6)+""+result.utcDate.charAt(7)+""+result.utcDate.charAt(8)+""+result.utcDate.charAt(9)}}</small>
+                        </div>
+                        <img src="@/assets/manutd-badge.svg" alt="">
+                    </div>
+                    
+                    <div class="col-4 text-right"><span class="fixture-team">{{result.awayTeam.name}}</span></div>
+                </div>
+                <hr>
             </div>
-            
-
-            <div class="current-form col-3 mt-3"></div>
-
-        </div>
-        
-        <div class="location text-center pt-2">
-            <span><i class="fas fa-map-marker-alt pr-2"></i>Old Trafford, <span class="city">Manchester</span></span>
-            <hr>
         </div>
 
-        <div class="col-9 p-0 d-flex justify-content-between">
-            <a href="#"><span><i class="fas fa-arrow-left text-light pr-2"></i>Previous results</span></a>
-        </div>
+        <a href="#"><span><i class="fas fa-arrow-left text-light pr-2 pb-4"></i>Previous fixtures</span></a>
 
     </div>
-
   </div>
 
 </template>
 
 <script>
+
+import api from '../api'
+
 export default {
 
+    data () {
+    return {
+      latestResults: [],
+      limit: 7,
+      busy: false,
+      loader: false,
+    }
+  },
+
+    methods: {
+
+        loadMore() {
+            this.loader = true;
+            this.busy = true;
+        api.get('competitions/PL/matches?status=FINISHED')
+        .then(response => { const append = response.data.matches.slice(
+            this.latestResults.length,
+            this.latestResults.length + this.limit,
+            this.latestResults.sort((a, b) => {
+                return new Date(a.latestResults.utcDate) - new Date(b.latestResults.utcDate);
+            })
+        );
+        setTimeout(() => {
+        this.latestResults = this.latestResults.concat(append);
+        this.busy = false;
+        this.loader = false;
+    }, 500);
+    });
+  }
+},
+
+created() {
+    this.loadMore();
+  }
 }
+
 </script>
 
 <style scoped>
@@ -62,14 +100,9 @@ export default {
 .fixtures-div {
     background-color: var(--main-purple-theme);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.fixture {
-    width: 75%;
-}
-
-.location {
-    width: 75%;
+    max-height: 512px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 h4 {
@@ -88,38 +121,49 @@ h4 {
 span {
     color: var(--white);
 }
-span i {
-    color: var(--red-theme);
-}
-
-.city {
-    font-weight: 500;
-}
 
 hr {
     height: 1px;
     background-color: var(--white);
     opacity: 0.2;
+    margin-top: 10px;
+    margin-bottom: 12px;
 }
 
-.current-form {
-    position: absolute;
-    right: 0;
-    top: -68%;
-    left: 75%;
-    bottom: 0;
-    background: linear-gradient(to right,rgba(52, 0, 64, 0.5), rgba(52, 0, 64, 0.5)), url("../assets/results-img.svg");
+.fixture-team {
+    font-weight: 600;
+    font-size: 1.5rem;
 }
-.current-form h4 {
+
+.fixture-time {
+    font-weight: 600;
+    background-color: var(--red-theme);
+    border-radius: 0;
+    padding: 2px 15px 2px 15px;
+    font-size: 1.4rem;
+}
+
+.fixture-date {
+    font-weight: 500;
+    font-size: 0.7rem;
+}
+
+.fixture img {
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
+.score-line {
+    border-right: 1.5px solid rgba(255, 255, 255, 0.39);
+}
+
+.loader span {
+    font-weight: 600;
     font-size: 1.3rem;
 }
 
-.fixture-row {
-    position: relative;
-}
-
-.results-line {
-    border-right: 1.5px solid rgba(255, 255, 255, 0.397);
+.loader .spinner {
+    color: var(--link-theme);
 }
 
 </style>

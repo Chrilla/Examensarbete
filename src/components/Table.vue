@@ -49,23 +49,18 @@
 
 <script>
 
-import axios from 'axios'
+import api from '../api'
 
 export default {
 
     data () {
     return {
-      tableStats: null
+      tableStats: []
     }
   },
 
     mounted () {
-    axios.get('https://api.football-data.org/v2/competitions/PL/standings', {
-        headers: {
-            'X-Auth-Token': 'a9dcf362aecb43138df28fb61c6c47e3',
-            "Content-Type": "application/json",
-            }
-    })
+    api.get('competitions/PL/standings')
       .then(response => (this.tableStats = response.data.standings[0].table))
   }
 }
