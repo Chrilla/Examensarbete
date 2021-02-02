@@ -65,7 +65,7 @@ export default {
 <style scoped>
 
 .footer-wrapper {
-  background: linear-gradient(to right,rgba(52, 0, 64, 0.699), rgba(52, 0, 64, 0.699)), url("../assets/footer-bg.svg");
+  background: linear-gradient(to right,rgba(52, 0, 64, 0.699), rgba(52, 0, 64, 0.699)), url("../assets/footer-bg.jpg");
   background-size: cover;
   background-color: var(--main-purple-theme);
   color: var(--white);

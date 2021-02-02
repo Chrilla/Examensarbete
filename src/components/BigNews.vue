@@ -41,7 +41,7 @@ export default {
 <style scoped>
 
 .big-news {
-    background: url("../assets/home-bg.svg");
+    background: url("../assets/home-bg.jpg");
     background-size: contain;
     background-color: var(--main-purple-theme);
     height: 450px;

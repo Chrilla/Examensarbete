@@ -1,6 +1,6 @@
 <template>
   
-  <div class="pt-5">
+  <div class="pt-5 pb-5">
 
     <div class="news-heading pl-4 d-flex justify-content-between">Latest results
         <div v-if="loader" class="loader d-flex align-items-center justify-content-center pr-4">
@@ -35,8 +35,6 @@
             </div>
         </div>
 
-        <a href="#"><span><i class="fas fa-arrow-left text-light pr-2 pb-4"></i>Previous fixtures</span></a>
-
     </div>
   </div>
 
@@ -51,7 +49,7 @@ export default {
     data () {
     return {
       latestResults: [],
-      limit: 7,
+      limit: 6,
       busy: false,
       loader: false,
     }
@@ -66,8 +64,8 @@ export default {
         .then(response => { const append = response.data.matches.slice(
             this.latestResults.length,
             this.latestResults.length + this.limit,
-            this.latestResults.sort((a, b) => {
-                return new Date(a.latestResults.utcDate) - new Date(b.latestResults.utcDate);
+            this.latestResults.sort((b, a) => {
+                return new Date(b.utcDate) - new Date(a.utcDate);
             })
         );
         setTimeout(() => {

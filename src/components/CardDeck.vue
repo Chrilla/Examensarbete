@@ -62,7 +62,7 @@ export default {
 .clubs {
     height: 400px;
     width: 385px;
-    background: linear-gradient(to right,rgba(52, 0, 64, 0.5), rgba(52, 0, 64, 0.5)), url("../assets/clubs-img.svg");
+    background: linear-gradient(to right,rgba(52, 0, 64, 0.5), rgba(52, 0, 64, 0.5)), url("../assets/clubs-img.jpg");
     background-size: cover;
     background-position: center top;
     background-color: var(--main-purple-theme);

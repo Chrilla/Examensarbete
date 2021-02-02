@@ -26,7 +26,7 @@
         </div>
 
         <div class="text-center pt-1 pb-1">
-            <router-link to="/about"><span>View full table with all statistics<i class="fas fa-arrow-right fa-xs pl-2"></i></span></router-link>
+            <router-link to="/table"><span>View full table with all statistics<i class="fas fa-arrow-right fa-xs pl-2"></i></span></router-link>
         </div>
 
         <!-- <div v-for="stats in tableStats" v-bind:key="stats.tableStats">

@@ -24,9 +24,9 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="ml-auto">
         <b-nav-item><router-link to="/">Home</router-link></b-nav-item>
-        <b-nav-item><router-link to="/about">News</router-link></b-nav-item>
+        <b-nav-item><router-link to="#">News</router-link></b-nav-item>
         <b-nav-item href="#">Fixtures</b-nav-item>
-        <b-nav-item href="#">Table</b-nav-item>
+        <b-nav-item><router-link to="/table">Table</router-link></b-nav-item>
         <b-nav-item href="#">Clubs</b-nav-item>
         <b-nav-item href="#">Players</b-nav-item>
         <b-nav-item href="#">Stats</b-nav-item>
@@ -86,7 +86,7 @@ export default {
 }
 
 .navbar {
-  background: linear-gradient(to right,rgba(52, 0, 64, 0.301), rgba(52, 0, 64, 0.301)), url("../assets/navbar-bg.svg");
+  background: linear-gradient(to right,rgba(52, 0, 64, 0.301), rgba(52, 0, 64, 0.301)), url("../assets/navbar-bg.jpg");
   background-size: cover;
   background-color: var(--main-purple-theme);
   color: var(--light-blue-theme);

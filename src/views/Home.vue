@@ -61,7 +61,7 @@ export default {
 }
 
 .home-bg {
-  background: linear-gradient(to right,rgba(52, 0, 64, 0.5), rgba(52, 0, 64, 0.5)), url("../assets/home-bg.svg");
+  background: linear-gradient(to right,rgba(52, 0, 64, 0.5), rgba(52, 0, 64, 0.5)), url("../assets/home-bg.jpg");
   background-size: cover;
   background-color: var(--main-purple-theme);
   border-top: 4px solid var(--red-theme);
