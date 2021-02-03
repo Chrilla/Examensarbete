@@ -14,8 +14,8 @@
   <NewsletterBanner/>
 
   <div class="container">
-    <UpcomingFixtures/>
     <LatestResults/>
+    <UpcomingFixtures/>
   </div>
 
   <ForumBanner/>

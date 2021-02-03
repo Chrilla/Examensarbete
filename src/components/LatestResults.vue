@@ -1,6 +1,6 @@
 <template>
   
-  <div class="pt-5 pb-5">
+  <div class="pt-5">
 
     <div class="news-heading pl-4 d-flex justify-content-between">Latest results
         <div v-if="loader" class="loader d-flex align-items-center justify-content-center pr-4">
@@ -49,24 +49,21 @@ export default {
     data () {
     return {
       latestResults: [],
-      limit: 6,
+      limit: 7,
       busy: false,
       loader: false,
     }
   },
 
     methods: {
-
+        
         loadMore() {
             this.loader = true;
             this.busy = true;
         api.get('competitions/PL/matches?status=FINISHED')
-        .then(response => { const append = response.data.matches.slice(
+        .then(response => { const append = response.data.matches.reverse().slice(
             this.latestResults.length,
             this.latestResults.length + this.limit,
-            this.latestResults.sort((b, a) => {
-                return new Date(b.utcDate) - new Date(a.utcDate);
-            })
         );
         setTimeout(() => {
         this.latestResults = this.latestResults.concat(append);

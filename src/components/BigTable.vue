@@ -117,7 +117,7 @@ table tr td:nth-child(1){
     background-color: #e20053;
     font-weight: 500;
 }
-table tr td:nth-child(n+3){
+table tr td:nth-child(n+4){
 	border-left: 2px solid var(--main-purple-theme);
     text-align: center;
 }

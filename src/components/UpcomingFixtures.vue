@@ -1,6 +1,6 @@
 <template>
   
-  <div class="pt-5">
+  <div class="pt-5 pb-5">
 
     <div class="news-heading pl-4 d-flex justify-content-between">Upcoming fixtures
         <div v-if="loader" class="loader d-flex align-items-center justify-content-center pr-4">
