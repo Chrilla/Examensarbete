@@ -4,7 +4,7 @@
 
       <div class="news-heading pl-4 mb-3">Featured news</div>
 
-      <BigNews/>
+      <FeaturedNewsCarousel/>
       <SmallNews/>
 
       <button class="news-button mt-3">Load more news...</button>
@@ -15,14 +15,14 @@
 
 <script>
 
-import BigNews from '@/components/BigNews.vue'
 import SmallNews from '@/components/SmallNews.vue'
+import FeaturedNewsCarousel from '@/components/FeaturedNewsCarousel.vue'
 
 export default {
 name: 'News',
   components: {
-    BigNews,
-    SmallNews
+    SmallNews,
+    FeaturedNewsCarousel
   }
 }
 </script>

@@ -1,14 +1,14 @@
 <template>
-  
-  <div>
+  <div class="d-flex flex-wrap">
 
-      <div class="d-flex">
-          <div class="small-news mr-1">
+      <div class="col-6 news-item" v-for="item in smallNews" :key="item.id">
+          <div class="small-news">
+              <img :src='item.smallnew.image'>
               <div class="card">
                 <div class="card-body">
                     <small>Januari 14th, 2021</small>
                     <h5 class="card-title mt-2">TITEL</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">{{item.smallnew.text}}</p>
                 </div>
                 <hr class="mb-2 mt-0">
                 <div class="socials d-flex justify-content-between pr-4 pb-2">
@@ -21,43 +21,55 @@
                 </div>
             </div>
           </div>
-
-          <div class="small-news ml-2">Small news</div>
-
-      </div>
-
-      <div class="d-flex">
-          <div class="small-news mr-1">Small news</div>
-          <div class="small-news ml-2">Small news</div>
       </div>
       
   </div>
-
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
+    components: {
+
+    },
+    created() {
+    this.$store.dispatch("getSmallnews")
+    },
+
+    computed: {
+    ...mapGetters(['smallNews'])
+    },
 
 }
 </script>
 
-<style>
+<style scoped>
 
-/* .card {
-    BILD/BAKGRUND HÄR
-} */
+.news-item:nth-child(odd) {
+    padding-left: 0;
+    padding-right: 7px;
+}
+
+.news-item:nth-child(even) {
+    padding-left: 7px;
+    padding-right: 0;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    min-height: 450px;
+}
 
 .small-news {
     background-color: var(--main-purple-theme);
-    height: 660px;
-    width: 100%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-top: 15px;
     position: relative;
 }
 
 .small-news .card {
-    position: absolute;
     bottom: 0;
     border-radius: 0;
 }

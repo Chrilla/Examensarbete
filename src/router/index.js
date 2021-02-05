@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import FullTable from '../views/FullTable.vue'
-import Register from '../views/Register.vue'
 import Secret from '../views/Secret.vue'
 
 import firebase from "firebase/app"
@@ -20,11 +19,6 @@ const routes = [
     path: '/table',
     name: 'Table',
     component: FullTable,
-  },
-  {
-    path: '/register',
-    name: 'register',
-    component: Register,
   },
   {
     path: '/secret',

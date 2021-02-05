@@ -1,7 +1,7 @@
 <template>
 
   <div id="app">
-    <Top-Header/>
+    <!-- <router-link to="/secret">Secret</router-link> -->
     <Navbar/>
     <router-view/>
     <Footer/>
@@ -13,14 +13,12 @@
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue'
 import Footer from '@/components/Footer.vue'
-import TopHeader from '@/components/Top-Header.vue'
 
 export default {
   name: 'Home',
   components: {
     Navbar,
     Footer,
-    TopHeader
   }
 }
 </script>
