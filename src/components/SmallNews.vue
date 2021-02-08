@@ -1,27 +1,40 @@
 <template>
-  <div class="d-flex flex-wrap">
+  <div class="d-flex flex-wrap" v-if="newsIndex <= newsToShow">
 
-      <div class="col-6 news-item" v-for="item in smallNews" :key="item.id">
+        <div class="col-6 news-item" v-for="newsIndex in newsToShow" :key="newsIndex.newsToShow">
           <div class="small-news">
-              <img :src='item.smallnew.image'>
+              <b-badge>{{smallNews[newsIndex - 1].newsPost.badge}}</b-badge>
+              <div class="img-div">
+                  <img :src='smallNews[newsIndex - 1].newsPost.image'>
+              </div>
               <div class="card">
                 <div class="card-body">
-                    <small>Januari 14th, 2021</small>
-                    <h5 class="card-title mt-2">TITEL</h5>
-                    <p class="card-text">{{item.smallnew.text}}</p>
+                    <small>{{smallNews[newsIndex - 1].newsPost.date}}</small>
+                    <h5 class="card-title mt-2">{{smallNews[newsIndex - 1].newsPost.title}}</h5>
+                    <p class="card-text">{{smallNews[newsIndex - 1].newsPost.text}}</p>
                 </div>
                 <hr class="mb-2 mt-0">
                 <div class="socials d-flex justify-content-between pr-4 pb-2">
-                    <small class="pl-4 my-auto">John Doe</small>
+                    <small class="pl-4 my-auto">{{smallNews[newsIndex - 1].newsPost.author}}</small>
                     <div>
-                        <i class="far fa-eye pr-1"></i><span class="pr-3 ">3247</span>
-                        <i class="far fa-heart pr-1"></i><span class="pr-3">689</span>
-                        <i class="far fa-comment-alt pr-1"></i><span>23</span>
+                        <i class="far fa-eye pr-1"></i><span class="pr-3 ">{{smallNews[newsIndex - 1].newsPost.views}}</span>
+                        <i class="far fa-heart pr-1"></i><span class="pr-3">{{smallNews[newsIndex - 1].newsPost.likes}}</span>
+                        <i class="far fa-comment-alt pr-1"></i><span>{{smallNews[newsIndex - 1].newsPost.comments}}</span>
                     </div>
                 </div>
             </div>
           </div>
       </div>
+
+      <button v-if="showMore" @click="viewMore" class="news-button mt-4 loader d-flex align-items-center justify-content-center">
+        <div v-if="loader" class="d-flex align-items-center">
+            <span class="pr-2">Loading more news...</span>
+            <b-spinner class="spinner" label="spinner"></b-spinner>
+        </div>
+        <div v-else>
+            <span>Load more news</span>
+        </div>
+      </button>
       
   </div>
 </template>
@@ -30,9 +43,19 @@
 import { mapGetters } from 'vuex'
 
 export default {
+    
     components: {
-
     },
+
+    data() {
+        return {
+            newsToShow: 4,
+            newsIndex: null,
+            showMore: true,
+            loader: false,
+        }
+    },
+
     created() {
     this.$store.dispatch("getSmallnews")
     },
@@ -41,10 +64,52 @@ export default {
     ...mapGetters(['smallNews'])
     },
 
+    methods: {
+        viewMore() {
+            this.loader = true;
+            setTimeout(() => {
+            this.newsToShow += 2;
+            this.showMore = this.newsToShow < this.smallNews.length;
+            this.loader = false;
+            }, 500);
+        }
+    }
 }
 </script>
 
 <style scoped>
+
+.spinner {
+    color: var(--link-theme);
+}
+
+.news-button {
+    background-color: var(--red-theme);
+    color: var(--white);
+    padding: 10px 0px 10px 0px;
+    font-weight: 600;
+    font-size: 1.9rem;
+    border: none;
+    width: 100%;
+}
+
+p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+.badge {
+    position: absolute;
+    left: 4%;
+    top: 2%;
+    background-color: #933FFF;
+    padding: 5px;
+    font-weight: 600;
+    border-radius: 0;
+    text-shadow: none;
+}
 
 .news-item:nth-child(odd) {
     padding-left: 0;
@@ -56,10 +121,15 @@ export default {
     padding-right: 0;
 }
 
-img {
-    object-fit: cover;
+.img-div {
+    height: 400px;
+    overflow: hidden;
+}
+
+.img-div img {
+    height: 100%;
     width: 100%;
-    min-height: 450px;
+    object-fit: cover;
 }
 
 .small-news {
@@ -74,11 +144,12 @@ img {
     border-radius: 0;
 }
 
+.socials, .socials i {
+    color: #666;
+}
+
 .card .socials span {
     font-size: 0.8rem;
-}
-.card .socials i {
-    color: var(--main-purple-theme);
 }
 
 .card hr {

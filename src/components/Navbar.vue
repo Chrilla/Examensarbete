@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <div class="topbar d-flex justify-content-between align-items-center">
+    <div class="topbar py-2 d-flex justify-content-between align-items-center">
       <div class="social-icons">
         <a href="#"><i class="fab fa-facebook"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -64,7 +64,6 @@ export default {
 .topbar {
   background: var(--secondary-purple-theme);
   color: var(--white);
-  padding: 8px 0px 8px 0px;
   box-shadow:0px 1px 8px black;
   position: relative;
   z-index: 2;

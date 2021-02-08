@@ -4,20 +4,23 @@
 
       <div class="popular-news-heading text-center px-3">Popular news</div>
 
-      <div class="news-bg">
+      <div class="news-bg pb-4">
 
-          <div class="d-flex pt-4 pl-4 pr-4">
-            <div>
-                <img class="pr-4 mt-1" src="@/assets/harry-kane-small.svg" alt="">
+          <div class="pt-4 container" v-for="item in popularNews" :key="item.popularNews">
+            <div class="d-flex">
+                <div class="col-5">
+                    <img class="" :src='item.newsArticle.image' alt="">
+                </div>
+                <div class="col-7">
+                    <b-badge class="mb-3">{{item.newsArticle.badge}}</b-badge>
+                    <h6 class="text-light">{{item.newsArticle.title}}</h6>
+                    <small class="text-light">{{item.newsArticle.date}}</small>
+                </div>
             </div>
-            <div>
-                <b-badge class="mb-3">TRANSFERS</b-badge>
-                <h6 class="text-light">HARRY KANE IS ON MANCHESTER UNITED'S RADAR...</h6>
-                <small class="text-light">Januari 14th, 2021</small>
-            </div>
+            
+            <div class="container"><hr class="mt-4 mb-0"></div>
+            
           </div>
-
-          <hr class="mt-2 mb-0">
 
       </div>
 
@@ -26,7 +29,19 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
+    components: {
+
+    },
+    created() {
+    this.$store.dispatch("getPopularnews")
+    },
+
+    computed: {
+    ...mapGetters(['popularNews'])
+    },
 
 }
 </script>
@@ -45,25 +60,26 @@ export default {
 
 .news-bg {
     background-color: var(--main-purple-theme);
-    height: 600px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 img {
-    height: 135px;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
 }
 
 hr {
     height: 1px;
     background-color: var(--white);
     opacity: 0.4;
-    width: 87%;
 }
 
 .badge {
     background-color: var(--red-theme);
     border-radius: 0;
     padding: 5px;
+    font-size: 0.7rem;
 }
 
 </style>

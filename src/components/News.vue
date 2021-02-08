@@ -7,8 +7,6 @@
       <FeaturedNewsCarousel/>
       <SmallNews/>
 
-      <button class="news-button mt-3">Load more news...</button>
-
   </div>
 
 </template>
@@ -36,16 +34,6 @@ name: 'News',
     padding: 10px 0px 10px 0px;
     font-weight: 600;
     font-size: 1.9rem;
-}
-
-.news-button {
-    background-color: var(--red-theme);
-    color: var(--white);
-    padding: 10px 0px 10px 0px;
-    font-weight: 600;
-    font-size: 1.9rem;
-    border: none;
-    width: 100%;
 }
 
 </style>

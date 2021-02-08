@@ -23,7 +23,7 @@
             <div class="card-body">
                 <small>{{ newscontent.date[0] }}</small>
                 <h5 class="mt-2">{{ newscontent.title[0] }}</h5>
-                <p>{{ newscontent.text }}</p>
+                <p class="mb-0">{{ newscontent.text }}</p>
                 <span class="socials d-flex justify-content-end pr-4 pb-2">
                     <i class="far fa-eye pr-1 my-auto"></i><span class="pr-3 ">{{newscontent.views[0]}}</span>
                     <i class="far fa-heart pr-1 my-auto"></i><span class="pr-3">{{newscontent.likes[0]}}</span>
@@ -42,7 +42,7 @@
             <div class="card-body">
                 <small>{{ newscontent.date[1] }}</small>
                 <h5 class="mt-2">{{ newscontent.title[1] }}</h5>
-                <p>{{ newscontent.text }}</p>
+                <p class="mb-0">{{ newscontent.text }}</p>
                 <span class="socials d-flex justify-content-end pr-4 pb-2">
                     <i class="far fa-eye pr-1 my-auto"></i><span class="pr-3 ">{{newscontent.views[1]}}</span>
                     <i class="far fa-heart pr-1 my-auto"></i><span class="pr-3">{{newscontent.likes[1]}}</span>
@@ -61,7 +61,7 @@
             <div class="card-body">
                 <small>{{ newscontent.date[2] }}</small>
                 <h5 class="mt-2">{{ newscontent.title[2] }}</h5>
-                <p>{{ newscontent.text }}</p>
+                <p class="mb-0">{{ newscontent.text }}</p>
                 <span class="socials d-flex justify-content-end pr-4 pb-2">
                     <i class="far fa-eye pr-1 my-auto"></i><span class="pr-3">{{newscontent.views[2]}}</span>
                     <i class="far fa-heart pr-1 my-auto"></i><span class="pr-3">{{newscontent.likes[2]}}</span>

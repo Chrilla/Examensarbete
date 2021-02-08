@@ -24,7 +24,7 @@
             <tr class="table-row" v-for="stats in tableStats" v-bind:key="stats.tableStats">
                 <td class="table-position">{{stats.position}}</td>
                 <td class="table-club"><span class="px-2"><img class="club-img" :src='stats.team.crestUrl' alt=""></span>{{stats.team.name}}</td>
-                <td>{{stats.playedGames}}</td>
+                <td class="table-played-games">{{stats.playedGames}}</td>
                 <td>{{stats.won}}</td>
                 <td>{{stats.draw}}</td>
                 <td>{{stats.lost}}</td>
@@ -109,7 +109,6 @@ tr th {
 .table-row td{
 	color: #fff;
     background-color: var(--red-theme);
-    font-weight: 500;
 }
 
 table tr td:nth-child(1){
@@ -145,6 +144,10 @@ table {
     background-color: #e20053;
 }
 
+.table-row .table-played-games {
+    font-weight: 600;
+}
+
 .table-logo h1 {
     font-size: 2.75rem;
     font-weight: 600;
@@ -154,8 +157,9 @@ table {
     font-size: 1rem;
     font-weight: 600;
     width: 1.8rem;
-    background-color: #ca004a;
+    background-color: var(--main-purple-theme);
     color: #fff;
+    border-radius: 0;
 }
 
 </style>

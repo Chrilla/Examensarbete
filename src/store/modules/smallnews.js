@@ -4,7 +4,7 @@ export default {
     
   state: {
       smallNews: [],
-      smallnew: null
+      newsPost: null
   },
 
   mutations: {
@@ -12,8 +12,8 @@ export default {
           state.smallNews = items
       },
 
-      SET_SMALLNEW(state, item) {
-          state.smallnew = item
+      SET_NEWSPOST(state, item) {
+          state.newsPost = item
       },
   },
 
@@ -23,7 +23,7 @@ export default {
               let items = [];
               res.forEach(doc => {
                   const data = {
-                      smallnew: doc.data()
+                      newsPost: doc.data()
                   }
                   items.push(data)
               });
@@ -36,8 +36,8 @@ export default {
       smallNews(state) {
           return state.smallNews
       },
-      smallNew(state) {
-          return state.smallnew
+      newsPost(state) {
+          return state.newsPost
       }
   }
 }
