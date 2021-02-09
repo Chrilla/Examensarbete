@@ -1,5 +1,5 @@
 <template>
-  <div class="my-5">
+  <div class="mt-5 mb-3">
     <b-tabs active-nav-item-class="" active-tab-class="" content-class="mt-5">
         
         <b-tab title="Sign in" active>
@@ -15,6 +15,8 @@
                     <a href="#"><small class="d-flex justify-content-end pt-2">Forgot your password?</small></a>
                 </b-form-group>
                 <b-button type="submit">Sign in</b-button>
+                <small class="py-3">or sign in with your Google account</small>
+                <img class="google-icon mx-auto" @click="googleLogin" width="30px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>
             </b-form>
         </b-tab>
         
@@ -64,30 +66,34 @@ export default {
 
     methods: {
 
-        async pressedLogin() {
+    async pressedLogin() {
+        try {
+
+        const val = await firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+        console.log(val)
+        this.$router.replace({name: "secret"})
+        } catch(err) {
+            console.log(err)
+        }
+    },
+
+    async pressedRegister() {
             try {
 
-            const val = await firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-            console.log(val)
-            this.$router.replace({name: "secret"})
+            const user = await firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+            console.log(user)
+            this.$router.replace({name: "secret"});
+
             } catch(err) {
                 console.log(err)
             }
         },
 
-        async pressedRegister() {
-                try {
-
-            const user = await firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
-                console.log(user)
-                this.$router.replace({name: "secret"});
-
-                } catch(err) {
-                    console.log(err)
-                }
-            }
+        googleLogin() {
+        const provider = new firebase.auth.GoogleAuthProvider()
+        firebase.auth().signInWithRedirect(provider)
         }
-    
+    }
 }
 
 </script>
@@ -109,6 +115,10 @@ button {
 .error {
     color: red;
     font-size: 18px;
+}
+
+.google-icon:hover {
+    cursor: pointer;
 }
 
 </style>

@@ -22,7 +22,7 @@ import "@firebase/auth"
 export default {
 
     methods: {
-        async pressed() {
+        async pressedRegister() {
             try {
 
            const user = await firebase.auth().createUserWithEmailAndPassword(this.email, this.password)

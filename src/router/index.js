@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import FullTable from '../views/FullTable.vue'
 import Secret from '../views/Secret.vue'
+import ChatView from '../views/ChatView.vue'
 
 import firebase from "firebase/app"
 import "@firebase/auth"
@@ -19,6 +20,11 @@ const routes = [
     path: '/table',
     name: 'Table',
     component: FullTable,
+  },
+  {
+    path: '/chat',
+    name: 'Chat',
+    component: ChatView,
   },
   {
     path: '/secret',

@@ -29,7 +29,7 @@
         <b-nav-item href="#">Clubs</b-nav-item>
         <b-nav-item href="#">Players</b-nav-item>
         <b-nav-item href="#">Stats</b-nav-item>
-        <b-nav-item href="#">Forum</b-nav-item>
+        <b-nav-item><router-link to="/chat">Chat</router-link></b-nav-item>
         <b-nav-item href="#">History</b-nav-item>
         <b-nav-item href="#">About</b-nav-item>
       </b-navbar-nav>
