@@ -17,14 +17,14 @@
                     <div class="col-4"><span class="fixture-team">{{fixture.homeTeam.name}}</span></div>
 
                     <div class="d-flex">
-                        <img src="@/assets/manutd-badge.svg" alt="">
+                        <img src="@/assets/manutd-badge.svg" alt="Home team club crest">
                         <div class="text-center">
                             <div class="fixture-time mx-4">
                                 <span>{{fixture.utcDate.charAt(11)+""+fixture.utcDate.charAt(12)+""+fixture.utcDate.charAt(13)+""+fixture.utcDate.charAt(14)+""+fixture.utcDate.charAt(15)}}</span>
                             </div>
                             <small class="fixture-date text-white">{{fixture.utcDate.charAt(0)+""+fixture.utcDate.charAt(1)+""+fixture.utcDate.charAt(2)+""+fixture.utcDate.charAt(3)+""+fixture.utcDate.charAt(4)+""+fixture.utcDate.charAt(5)+""+fixture.utcDate.charAt(6)+""+fixture.utcDate.charAt(7)+""+fixture.utcDate.charAt(8)+""+fixture.utcDate.charAt(9)}}</small>
                         </div>
-                        <img src="@/assets/manutd-badge.svg" alt="">
+                        <img src="@/assets/manutd-badge.svg" alt="Away team club crest">
                     </div>
                     
                     <div class="col-4 text-right"><span class="fixture-team">{{fixture.awayTeam.name}}</span></div>

@@ -1,12 +1,12 @@
 <template>
   
-  <div class=" py-5">
+  <div class="py-5" tabindex="0">
       <div class="newsletter-banner">
         <div class="container d-flex">
             <div class="row justify-content-between">
 
             <div class="col-10">
-                <img src="@/assets/home-bg.jpg" alt="">
+                <img src="@/assets/home-bg.jpg" alt="Forum banner image">
             </div>
 
         </div>

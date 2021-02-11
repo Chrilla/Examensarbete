@@ -1,6 +1,6 @@
 <template>
 
-  <div class="">
+  <div>
 
       <div class="popular-news-heading text-center px-3">Popular news</div>
 
@@ -9,7 +9,7 @@
           <div class="pt-4 container" v-for="item in popularNews" :key="item.popularNews">
             <div class="d-flex">
                 <div class="col-5">
-                    <img class="" :src='item.newsArticle.image' alt="">
+                    <img :src='item.newsArticle.image' alt="Popular news image">
                 </div>
                 <div class="col-7">
                     <b-badge class="mb-3">{{item.newsArticle.badge}}</b-badge>

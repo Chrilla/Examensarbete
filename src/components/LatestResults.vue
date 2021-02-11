@@ -17,7 +17,7 @@
                     <div class="col-4"><span class="fixture-team">{{result.homeTeam.name}}</span></div>
 
                     <div class="d-flex">
-                        <img src="@/assets/manutd-badge.svg" alt="">
+                        <img src="@/assets/manutd-badge.svg" alt="Club crest home team">
                         <div class="text-center">
                             <div class="fixture-time mx-4">
                                 <span class="pr-3">{{result.score.fullTime.homeTeam}}</span>
@@ -26,7 +26,7 @@
                             </div>
                             <small class="fixture-date text-white">{{result.utcDate.charAt(0)+""+result.utcDate.charAt(1)+""+result.utcDate.charAt(2)+""+result.utcDate.charAt(3)+""+result.utcDate.charAt(4)+""+result.utcDate.charAt(5)+""+result.utcDate.charAt(6)+""+result.utcDate.charAt(7)+""+result.utcDate.charAt(8)+""+result.utcDate.charAt(9)}}</small>
                         </div>
-                        <img src="@/assets/manutd-badge.svg" alt="">
+                        <img src="@/assets/manutd-badge.svg" alt="Club crest away team">
                     </div>
                     
                     <div class="col-4 text-right"><span class="fixture-team">{{result.awayTeam.name}}</span></div>

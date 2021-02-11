@@ -13,7 +13,7 @@
         <RegisterModal/>
     </b-modal>
 
-    <span v-if="loggedIn" @click="signOut">Sign out<i class="fas fa-user ml-2"></i></span>
+    <button class="sign-out-button" v-if="loggedIn" @click="signOut">Sign out<i class="fas fa-user ml-2"></i></button>
     <span v-else v-b-modal.modal-login>Sign in<i class="fas fa-user ml-2"></i></span>
     <b-modal modal-class="modal-bg" v-if="showModal" id="modal-login" title="Login or register an account" hide-footer centered>
         <LoginModal/>
@@ -70,6 +70,16 @@ export default {
 
 <style scoped>
 
+.sign-out-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: var(--link-blue-theme);
+}
+.sign-out-button:hover {
+  color: #fff;
+}
+
 ::v-deep .modal-body {
   background-color: var(--main-purple-theme);
   color: white;
@@ -109,6 +119,7 @@ export default {
   margin-bottom: 0;
   border: none;
   border-radius: 0;
+  font-weight: 500;
 }
 
 ::v-deep .nav-tabs .nav-link:hover {

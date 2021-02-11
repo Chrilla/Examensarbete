@@ -26,10 +26,10 @@ export default {
 <style>
 
 :root {
-  --main-purple-theme: #340040;
+  --main-purple-theme: #38003c;
   --secondary-purple-theme: #40004F;
-  --red-theme: #F2055C;
-  --light-blue-theme: #07F2F2;
+  --red-theme: #e90052;
+  --light-blue-theme: #04f5ff;
   --link-theme: #7FC4FD;
 }
 

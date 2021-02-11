@@ -1,12 +1,12 @@
 <template>
   
-  <div class=" py-5">
+  <div class="py-5">
       <div class="newsletter-banner">
         <div class="container d-flex">
             <div class="row justify-content-between">
 
             <div class="col-10">
-                <img src="@/assets/rainy-football.jpg" alt="">
+                <img src="@/assets/rainy-football.jpg" alt="Newsletter banner image">
             </div>
 
         </div>
@@ -14,7 +14,7 @@
         <div class="col-6 my-auto">
             <h4>Sign up for the Premier League Hub newsletter by filling in your email below</h4>
             <div class="d-flex mt-4 col-10 pl-0">
-                <b-form-input size="sm" class="mr-sm-2" placeholder="Email address..."></b-form-input>
+                <b-form-input title="Newsletter form field, enter email address" size="sm" class="mr-sm-2" placeholder="Email address..."></b-form-input>
                 <b-button size="sm" class="my-2 ml-1 px-3 my-sm-0" type="submit">Subscribe</b-button>
             </div>
         </div>

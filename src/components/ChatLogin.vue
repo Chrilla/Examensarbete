@@ -1,11 +1,13 @@
 <template>
   <div class="login-container text-center d-flex align-items-center">
-    <button class="mx-auto" @click="loginSubmit">Press here to login with your Google account to use the chat</button>
+    <button class="mx-auto" @click="loginSubmit">Click here to login with your Google account to use the chat</button>
   </div>
 </template>
 
 <script>
-import firebase from 'firebase'
+import firebase from 'firebase/app'
+import "@firebase/auth"
+
 export default {
   methods: {
     loginSubmit() {

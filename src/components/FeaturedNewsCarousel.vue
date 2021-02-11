@@ -1,5 +1,5 @@
 <template>
-  <div class="news-carousel" >
+  <div class="news-carousel" tabindex="0" title="Featured news carousel" >
     <b-carousel
       id="carousel-1"
       v-model="slide"
@@ -18,7 +18,7 @@
         <template #img>
           <div class="img-div">
                 <b-badge>{{newscontent.category[0]}}</b-badge>
-                <img class="d-block img-fluid w-100" width="1024" height="480" :src='newscontent.image[0]' alt="image slot">
+                <img class="d-block img-fluid w-100" width="1024" height="480" :src='newscontent.image[0]' alt="Photo of Luka Modric">
             </div>
             <div class="card-body">
                 <small>{{ newscontent.date[0] }}</small>
@@ -37,7 +37,7 @@
         <template #img>
           <div class="img-div">
                 <b-badge>{{newscontent.category[0]}}</b-badge>
-                <img class="d-block img-fluid w-100" width="1024" height="480" :src='newscontent.image[1]' alt="image slot">
+                <img class="d-block img-fluid w-100" width="1024" height="480" :src='newscontent.image[1]' alt="Photo of Harry Kane">
             </div>
             <div class="card-body">
                 <small>{{ newscontent.date[1] }}</small>
@@ -56,7 +56,7 @@
         <template #img>
           <div class="img-div">
                 <b-badge>{{newscontent.category[1]}}</b-badge>
-                <img class="d-block img-fluid w-100" width="1024" height="480" :src='newscontent.image[2]' alt="image slot">
+                <img class="d-block img-fluid w-100" width="1024" height="480" :src='newscontent.image[2]' alt="Photo of Virgil van Dijk">
             </div>
             <div class="card-body">
                 <small>{{ newscontent.date[2] }}</small>

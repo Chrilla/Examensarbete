@@ -11,14 +11,14 @@
     </header>
       <main class="py-4 px-2">
           <div v-for="(msg, index) in messages" v-bind:key="'index-'+index" :class="['message', sentOrReceived(msg.userUID)]">
-              <img :src="msg.photoURL" :alt="msg.displayName">
+              <img title="User" :src="msg.photoURL" :alt="msg.displayName">
               <p>{{msg.text}}</p>
           </div>
 
           <div ref="scrollable"></div>
       </main>
       <form v-on:submit.prevent="sendMessage">
-          <input v-model="message" type="text" placeholder="Enter your message...">
+          <input title="Enter your chat message" v-model="message" type="text" placeholder="Enter your message...">
           <button :disabled="!message" type="submit">Send</button>
       </form>
   </section>
@@ -29,7 +29,9 @@
 </template>
 
 <script>
-import firebase from 'firebase'
+import firebase from 'firebase/app'
+import "@firebase/auth"
+import "@firebase/firestore"
 
 export default {
     mounted() {
@@ -90,6 +92,7 @@ export default {
 }
 .wrapper header h1 {
     font-weight: 600;
+    border-bottom: 2px solid var(--light-blue-theme);
 }
 .wrapper section {
     background-color: var(--main-purple-theme);

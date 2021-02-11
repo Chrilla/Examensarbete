@@ -18,7 +18,7 @@
         <div v-for="stats in tableStats" v-bind:key="stats.tableStats">
             <div class="pl-4">
                 <span class="table-stats">{{stats.position}}</span>
-                <span class="px-2"><img class="club-img" :src='stats.team.crestUrl' alt=""></span>
+                <span class="px-2"><img class="club-img" :src='stats.team.crestUrl' alt="Club crest"></span>
                 <span class="table-stats team-name">{{stats.team.name}}</span>
                 <span class="table-stats float-right pr-4">{{stats.points}}</span>
             </div>

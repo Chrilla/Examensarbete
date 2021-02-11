@@ -113,7 +113,7 @@ tr th {
 
 table tr td:nth-child(1){
 	color: #fff;
-    background-color: #e20053;
+    background-color: #d3004d;
     font-weight: 500;
 }
 table tr td:nth-child(n+4){
@@ -127,7 +127,7 @@ table {
 
 .table-row:hover td{
 	color: #fff;
-    background-color: #e20053;
+    background-color: #d3004d;
 }
 
 .club-img {
@@ -141,7 +141,7 @@ table {
 
 .table-row .table-points {
     font-weight: 600;
-    background-color: #e20053;
+    background-color: #d3004d;
 }
 
 .table-row .table-played-games {

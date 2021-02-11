@@ -5,7 +5,7 @@
           <div class="small-news">
               <b-badge>{{smallNews[newsIndex - 1].newsPost.badge}}</b-badge>
               <div class="img-div">
-                  <img :src='smallNews[newsIndex - 1].newsPost.image'>
+                  <img alt="Media image from API" :src='smallNews[newsIndex - 1].newsPost.image'>
               </div>
               <div class="card">
                 <div class="card-body">
@@ -26,7 +26,7 @@
           </div>
       </div>
 
-      <button v-if="showMore" @click="viewMore" class="news-button mt-4 loader d-flex align-items-center justify-content-center">
+      <button title="Click to load more news articles" v-if="showMore" @click="viewMore" class="news-button mt-4 loader d-flex align-items-center justify-content-center">
         <div v-if="loader" class="d-flex align-items-center">
             <span class="pr-2">Loading more news...</span>
             <b-spinner class="spinner" label="spinner"></b-spinner>
