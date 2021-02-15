@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-wrap" v-if="newsIndex <= newsToShow">
+  <div class="d-flex flex-wrap outline-screen-reader" tabindex="0" v-if="newsIndex <= newsToShow">
 
         <div class="col-6 news-item" v-for="newsIndex in newsToShow" :key="newsIndex.newsToShow">
           <div class="small-news">
@@ -13,8 +13,8 @@
                     <h5 class="card-title mt-2">{{smallNews[newsIndex - 1].newsPost.title}}</h5>
                     <p class="card-text">{{smallNews[newsIndex - 1].newsPost.text}}</p>
                 </div>
-                <hr class="mb-2 mt-0">
-                <div class="socials d-flex justify-content-between pr-4 pb-2">
+                <hr aria-hidden="true" class="mb-2 mt-0">
+                <div aria-hidden="true" class="socials d-flex justify-content-between pr-4 pb-2">
                     <small class="pl-4 my-auto">{{smallNews[newsIndex - 1].newsPost.author}}</small>
                     <div>
                         <i class="far fa-eye pr-1"></i><span class="pr-3 ">{{smallNews[newsIndex - 1].newsPost.views}}</span>
@@ -79,6 +79,10 @@ export default {
 
 <style scoped>
 
+.outline-screen-reader {
+    outline: lawngreen 1;
+}
+
 .spinner {
     color: var(--link-theme);
 }
@@ -104,7 +108,7 @@ p {
     position: absolute;
     left: 4%;
     top: 2%;
-    background-color: #933FFF;
+    background-color: var(--blue-theme);
     padding: 5px;
     font-weight: 600;
     border-radius: 0;

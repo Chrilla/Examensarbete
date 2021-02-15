@@ -15,7 +15,7 @@
             <h4>Sign up for the Premier League Hub newsletter by filling in your email below</h4>
             <div class="d-flex mt-4 col-10 pl-0">
                 <b-form-input title="Newsletter form field, enter email address" size="sm" class="mr-sm-2" placeholder="Email address..."></b-form-input>
-                <b-button size="sm" class="my-2 ml-1 px-3 my-sm-0" type="submit">Subscribe</b-button>
+                <b-button size="sm" class="my-2 ml-1 px-3 my-sm-0 d-flex align-items-center" type="submit">Subscribe<i class="fas fa-envelope pl-2"></i></b-button>
             </div>
         </div>
 

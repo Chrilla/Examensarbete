@@ -1,6 +1,6 @@
 <template>
   <div class="login-container text-center d-flex align-items-center">
-    <button class="mx-auto" @click="loginSubmit">Click here to login with your Google account to use the chat</button>
+    <button class="mx-auto" @click="loginSubmit">Click here to login with your Google account to use the chat<i class="fas fa-sign-in-alt pl-2"></i></button>
   </div>
 </template>
 

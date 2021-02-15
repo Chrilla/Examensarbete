@@ -13,10 +13,16 @@
     
   <NewsletterBanner/>
 
-  <div class="container">
-    <LatestResults/>
-    <UpcomingFixtures/>
-  </div>
+  <b-tabs justified content-class="" class="container pb-5">
+    <b-tab>
+      <template slot="title">Latest results<i class="fas fa-running pl-2"></i></template>
+      <LatestResults/>
+    </b-tab>
+    <b-tab lazy>
+      <template slot="title">Upcoming fixtures<i class="fas fa-stopwatch pl-2"></i></template>
+      <UpcomingFixtures/>
+    </b-tab>
+  </b-tabs>
 
   <ForumBanner/>
   <CardDeck/>
@@ -72,6 +78,37 @@ export default {
   margin-right: auto;
   left: 0;
   right: 0;
+}
+
+::v-deep .nav-tabs {
+  border-radius: none;
+  text-align: center;
+  margin: auto;
+  border-bottom: 1px solid var(--light-blue-theme);
+  font-size: 1.2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+::v-deep .nav-tabs .nav-link {
+  margin-bottom: 0;
+  border: none;
+  font-weight: 500;
+  background-color: #c70046a8;
+  color: rgba(255, 255, 255, 0.705);
+}
+::v-deep .nav-tabs .nav-link:hover {
+  color: #fff;
+  background-color: #c70046d7;
+}
+::v-deep .nav-tabs .nav-link.active {
+  background-color: var(--red-theme);
+  color: #fff;
+  margin-right: 4px;
+  border-bottom: none;
+}
+::v-deep .nav-tabs .nav-link.active:hover {
+  background-color: var(--red-theme);
+  color: #fff;
 }
 
 </style>

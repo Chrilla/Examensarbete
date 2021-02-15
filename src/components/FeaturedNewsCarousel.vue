@@ -62,7 +62,7 @@
                 <small>{{ newscontent.date[2] }}</small>
                 <h5 class="mt-2">{{ newscontent.title[2] }}</h5>
                 <p class="mb-0">{{ newscontent.text }}</p>
-                <span class="socials d-flex justify-content-end pr-4 pb-2">
+                <span aria-hidden="true" class="socials d-flex justify-content-end pr-4 pb-2">
                     <i class="far fa-eye pr-1 my-auto"></i><span class="pr-3">{{newscontent.views[2]}}</span>
                     <i class="far fa-heart pr-1 my-auto"></i><span class="pr-3">{{newscontent.likes[2]}}</span>
                     <i class="far fa-comment-alt pr-1 my-auto"></i><span>{{newscontent.comments[2]}}</span>
@@ -130,7 +130,7 @@ import { db } from '../firebase';
     position: absolute;
     left: 2%;
     top: 3%;
-    background-color: #933FFF;
+    background-color: var(--blue-theme);
     padding: 5px;
     font-weight: 600;
     border-radius: 0;

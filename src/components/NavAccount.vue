@@ -13,7 +13,7 @@
         <RegisterModal/>
     </b-modal>
 
-    <button class="sign-out-button" v-if="loggedIn" @click="signOut">Sign out<i class="fas fa-user ml-2"></i></button>
+    <button class="sign-out-button" v-if="loggedIn" @click="signOut">Sign out<i class="fas fa-sign-out-alt pl-2"></i></button>
     <span v-else v-b-modal.modal-login>Sign in<i class="fas fa-user ml-2"></i></span>
     <b-modal modal-class="modal-bg" v-if="showModal" id="modal-login" title="Login or register an account" hide-footer centered>
         <LoginModal/>

@@ -14,7 +14,7 @@
                     <b-form-input title="Enter your password" type="password" v-model="password" placeholder="Password..."></b-form-input>
                     <a href="#"><small class="forgot-password d-flex justify-content-end pt-2">Forgot your password?</small></a>
                 </b-form-group>
-                <b-button type="submit">Sign in</b-button>
+                <b-button type="submit" class="d-flex justify-content-center align-items-center">Sign in<i class="fas fa-sign-in-alt pl-2"></i></b-button>
                 <small class="py-3">or sign in with your Google account</small>
                 <button @click="googleLogin" class="google-button mx-auto d-flex justify-content-center">
                     <img class="google-icon mx-auto" width="30px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>

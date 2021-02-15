@@ -30,6 +30,7 @@ export default {
   --secondary-purple-theme: #40004F;
   --red-theme: #e90052;
   --light-blue-theme: #04f5ff;
+  --blue-theme: #933FFF;
   --link-theme: #7FC4FD;
 }
 

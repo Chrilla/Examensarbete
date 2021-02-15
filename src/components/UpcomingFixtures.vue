@@ -1,6 +1,6 @@
 <template>
   
-  <div class="pt-5 pb-5">
+  <div>
 
     <div class="news-heading pl-4 d-flex justify-content-between">Upcoming fixtures
         <div v-if="loader" class="loader d-flex align-items-center justify-content-center pr-4">
@@ -110,12 +110,14 @@ created() {
 <style scoped>
 
 .news-heading {
-    background-color: var(--red-theme);
-    border-left: 8px solid var(--white);
-    color: var(--white);
+    background-color: var(--secondary-purple-theme);
+    border-left: 8px solid var(--red-theme);
+    color: #fff;
     padding: 10px 0px 10px 0px;
     font-weight: 600;
     font-size: 1.9rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
 }
 
 .fixtures-div {

@@ -76,7 +76,7 @@ hr {
 }
 
 .badge {
-    background-color: var(--red-theme);
+    background-color: var(--blue-theme);
     border-radius: 0;
     padding: 5px;
     font-size: 0.7rem;

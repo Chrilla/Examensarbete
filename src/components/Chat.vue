@@ -19,7 +19,7 @@
       </main>
       <form v-on:submit.prevent="sendMessage">
           <input title="Enter your chat message" v-model="message" type="text" placeholder="Enter your message...">
-          <button :disabled="!message" type="submit">Send</button>
+          <button :disabled="!message" type="submit">Send<i class="fas fa-comment pl-2"></i></button>
       </form>
   </section>
 
@@ -172,7 +172,7 @@ export default {
 }
 .wrapper .message.sent p {
     color: #fff;
-    background: #933FFF;
+    background: var(--blue-theme);
     align-self: flex-end;
     
 }

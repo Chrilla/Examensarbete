@@ -51,13 +51,11 @@
 import api from '../api'
 
 export default {
-
     data () {
     return {
       tableStats: []
     }
   },
-
     mounted () {
     api.get('competitions/PL/standings')
       .then(response => (this.tableStats = response.data.standings[0].table))

@@ -7,11 +7,9 @@
       <div id="table" class="pb-2 mb-3">
 
           <div class="table-stats d-flex justify-content-between pr-4 pb-2 pt-4">
-                <span class="pl-4 pr-2">Pos</span>
-                <span class="pr-5 mr-5">Club</span>
-            <div>
-                <span class="pr-2">Pts</span>
-            </div>
+            <span class="pl-4">Pos</span>
+            <span class="pr-5 mr-5">Club</span>
+            <span>Pts</span>
         </div>
         <hr class="mt-1">
 
@@ -73,9 +71,9 @@ export default {
     background-color: var(--red-theme);
     border-left: 8px solid var(--white);
     color: var(--white);
-    padding: 18.4px 0px 18.4px 0px;
+    padding: 16px 0px 16px 0px;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 #table {
