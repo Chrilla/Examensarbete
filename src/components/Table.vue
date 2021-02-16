@@ -4,21 +4,21 @@
 
       <div class="table-heading text-center px-3">Premier League 2020/2021</div>
       
-      <div id="table" class="pb-2 mb-3">
+      <div id="table" class="pb-2 mb-3 px-4">
 
-          <div class="table-stats d-flex justify-content-between pr-4 pb-2 pt-4">
-            <span class="pl-4">Pos</span>
-            <span class="pr-5 mr-5">Club</span>
+          <div class="table-stats d-flex justify-content-between pb-2 pt-4">
+            <span class="">Pos</span>
+            <span class="mr-5 pr-5">Club</span>
             <span>Pts</span>
         </div>
         <hr class="mt-1">
 
         <div v-for="stats in tableStats" v-bind:key="stats.tableStats">
-            <div class="pl-4">
+            <div>
                 <span class="table-stats">{{stats.position}}</span>
                 <span class="px-2"><img class="club-img" :src='stats.team.crestUrl' alt="Club crest"></span>
                 <span class="table-stats team-name">{{stats.team.name}}</span>
-                <span class="table-stats float-right pr-4">{{stats.points}}</span>
+                <span class="table-stats float-right">{{stats.points}}</span>
             </div>
             <hr class="hr-between">
         </div>
@@ -86,7 +86,6 @@ hr {
     height: 1px;
     background-color: var(--white);
     opacity: 0.6;
-    width: 88%;
 }
 
 .hr-between {

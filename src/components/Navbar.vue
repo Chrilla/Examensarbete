@@ -13,15 +13,17 @@
       </div>
     </div>
 
-  <b-navbar role="navigation" class="navbar" toggleable="lg">
+  <b-navbar role="navigation" class="navbar flex-wrap py-3" toggleable="lg">
   <a href="/">
-    <b-navbar-brand class="navbar-brand"><img src="@/assets/brandlogo.svg" alt="brand logo" aria-label="Brand logo, click to go to startpage"></b-navbar-brand>
+    <b-navbar-brand class="navbar-brand d-none d-sm-inline"><img src="@/assets/brandlogo.svg" alt="brand logo" aria-label="Brand logo, click to go to startpage"></b-navbar-brand>
     <span>Premier League Hub</span>
   </a>
 
-    <b-navbar-toggle tabindex="0" target="nav-collapse"></b-navbar-toggle>
+    <b-navbar-toggle tabindex="0" target="nav-collapse" class="ml-auto">
+      <i class="fas fa-bars"></i>
+    </b-navbar-toggle>
 
-    <b-collapse id="nav-collapse" is-nav>
+    <b-collapse id="nav-collapse" class="flex-wrap" is-nav>
       <b-navbar-nav class="ml-auto">
         <b-nav-item><router-link to="/">Home</router-link></b-nav-item>
         <b-nav-item><router-link to="/news">News</router-link></b-nav-item>
@@ -35,14 +37,13 @@
         <b-nav-item><router-link to="/about">About</router-link></b-nav-item>
       </b-navbar-nav>
 
-      <!-- Right aligned nav items -->
       <form class="ml-auto">
         <div class="input-wrapper">
           <b-form-input aria-label="Enter your search in the searchfield" size="sm" id="searchfield" type="search" placeholder="Enter your search here..."></b-form-input>
           <b-button title="Searchfield submit button" for="searchfield" class="fas fa-search input-icon" type="submit"></b-button>
         </div>
-
       </form>
+
     </b-collapse>
   </b-navbar>
 
@@ -166,5 +167,19 @@ a.router-link-exact-active {
   border-right: 3px solid var(--red-theme);
   border-top: 3px solid var(--red-theme);
 }
+
+.navbar-light .navbar-toggler {
+  color: #fff;
+  font-size: 2rem;
+}
+
+@media (max-width: 992px) {
+
+.navbar-light .navbar-nav .nav-link {
+  padding: 12px;
+}
+
+}
+
 
 </style>

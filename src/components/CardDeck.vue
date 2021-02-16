@@ -1,8 +1,9 @@
 <template>
 
-<div class="container d-flex py-5">
+<div class="container card-deck-mobile py-5">
+    <div class="d-flex justify-content-center flex-wrap flex-lg-nowrap">
 
-    <div class="stats d-flex align-items-center m-2">
+        <div class="stats d-flex align-items-center m-2">
         <div class="card-text text-center mx-auto">
             <a href="#">
             <h4>Stats</h4>
@@ -29,6 +30,7 @@
         </div>
     </div>
 
+ </div>
 </div>
 
 </template>
@@ -79,6 +81,14 @@ export default {
 .card-text span {
     font-size: 0.9rem;
     font-weight: 500;
+}
+
+@media (max-width: 576px) {
+
+.card-deck-mobile {
+  padding-top: 0!important;
+}
+
 }
 
 </style>

@@ -3,9 +3,9 @@
   <div class="home">
 
   <div class="home-bg"></div>
-    <div class="container d-flex">
-      <div class="col-8"><News/></div>
-      <div class="col-4 table p-0">
+    <div class="container-xl d-flex">
+      <div class="col-12 col-lg-8"><News/></div>
+      <div class="col-4 p-0 table d-none d-lg-block">
         <div class=""><Table/></div>
         <div class=""><PopularNews/></div>
       </div>
@@ -13,13 +13,13 @@
     
   <NewsletterBanner/>
 
-  <b-tabs justified content-class="" class="container pb-5">
+  <b-tabs justified content-class="" class="container pb-5 tabs-mobile">
     <b-tab>
-      <template slot="title">Latest results<i class="fas fa-running pl-2"></i></template>
+      <template slot="title"><span class="d-flex justify-content-center align-items-center tab-title">Latest results<i class="fas fa-running pl-2"></i></span></template>
       <LatestResults/>
     </b-tab>
     <b-tab lazy>
-      <template slot="title">Upcoming fixtures<i class="fas fa-stopwatch pl-2"></i></template>
+      <template slot="title"><span class="d-flex justify-content-center align-items-center tab-title">Upcoming fixtures<i class="fas fa-stopwatch pl-2"></i></span></template>
       <UpcomingFixtures/>
     </b-tab>
   </b-tabs>
@@ -109,6 +109,18 @@ export default {
 ::v-deep .nav-tabs .nav-link.active:hover {
   background-color: var(--red-theme);
   color: #fff;
+}
+
+@media (max-width: 576px) {
+
+.tabs-mobile {
+  padding-bottom: 0!important;
+}
+
+.tab-title {
+  font-size: 0.8rem;
+}
+
 }
 
 </style>

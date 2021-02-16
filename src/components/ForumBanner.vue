@@ -2,18 +2,18 @@
   
   <div class="py-5" tabindex="0">
       <div class="newsletter-banner">
-        <div class="container d-flex">
+        <div class="container d-flex flex-wrap flex-md-nowrap">
             <div class="row justify-content-between">
 
-            <div class="col-10">
-                <img src="@/assets/home-bg.jpg" alt="Forum banner image">
+            <div class="col-11">
+                <img class="d-none d-lg-block" src="@/assets/home-bg.jpg" alt="Forum banner image">
             </div>
 
         </div>
 
-        <div class="col-6 my-auto">
-            <h4>Have you visited our forum yet? <br> Discuss football with other fans!</h4>
-            <div class="text-center mt-4 col-10 pl-0">
+        <div class="my-auto newsletter-form text-center mx-auto col-lg-6">
+            <h4>Have you visited our forum yet? <br class="d-none d-lg-block"> Discuss football with other fans!</h4>
+            <div class="mt-4 pl-0">
                 <b-button size="sm" class="my-2 ml-1 px-3 py-2 my-sm-0" type="submit">Take me there!</b-button>
             </div>
         </div>
@@ -62,6 +62,55 @@ h4 {
 
 img {
     width: 100%;
+}
+
+@media (max-width: 992px) {
+
+img {
+  padding-bottom: 15px;
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 6px;
+  font-weight: 2rem;
+  margin-left: 0!important;
+}
+
+.btn-sm {
+  font-size: 1rem;
+}
+
+.newsletter-form {
+    padding: 0;
+}
+
+.newsletter-input {
+    padding-right: 0;
+    margin-top: 10px!important;
+}
+
+.newsletter-banner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+h4 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+}
+
+@media (min-width: 992px) {
+.newsletter-form {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+img {
+    height: 100%;
+}
+
 }
 
 </style>

@@ -2,9 +2,9 @@
 
 <div class="footer-wrapper">
 
-<footer class="d-flex justify-content-around py-5">
+<footer class="container-fluid d-flex justify-content-around text-sm-center text-xl-left py-5">
   <div class="row">
-    <div class="col-2 contact">
+    <div class="col-6 col-sm-3 col-xl-2 contact">
       <h5>Contact us</h5>
       <ul class="list-unstyled text-small">
         <li><a href="#">info@plhub.com</a></li>
@@ -13,7 +13,7 @@
         <li><span>63341 Eskilstuna</span></li>
       </ul>
     </div>
-    <div class="col-2 ">
+    <div class="col-6 col-sm-3 col-xl-2">
       <h5>Customer service</h5>
       <ul class="list-unstyled text-small">
         <li><a href="#">Resource</a></li>
@@ -22,7 +22,7 @@
         <li><a href="#">Final resource</a></li>
       </ul>
     </div>
-    <div class="col-2 ">
+    <div class="col-6 col-sm-3 col-xl-2">
       <h5>Information</h5>
       <ul class="list-unstyled text-small">
         <li><a href="#">About PL Hub</a></li>
@@ -31,7 +31,7 @@
         <li><a href="#">Terms &amp; conditions</a></li>
       </ul>
     </div>
-    <div class="col-2 ">
+    <div class="col-6 col-sm-3 col-xl-2">
       <h5>Social media</h5>
       <ul class="list-unstyled text-small">
           <div class="social-icons">
@@ -41,16 +41,20 @@
           </div>
       </ul>
     </div>
-    <div class="col-4">
+    <div class="col-12 col-sm-6 col-xl-4 mx-auto">
         <h5>Subscribe to Premier League Hub</h5>
         <p>Sign up for the Premier League Hub newsletter by filling in your email below</p>
-        <div class="d-flex">
+        <div class="d-flex flex-wrap flex-sm-nowrap">
             <b-form-input aria-label="Newsletter form field, enter email address" size="sm" class="mr-sm-2" placeholder="Email address..."></b-form-input>
-            <b-button size="sm" class="my-2 ml-1 px-3 my-sm-0 d-flex align-items-center" type="submit">Subscribe<i class="fas fa-envelope pl-2"></i></b-button>
+            <b-button size="sm" class="my-2 ml-1 px-3 my-sm-0 d-sm-flex align-items-center" type="submit">Subscribe<i class="fas fa-envelope pl-2"></i></b-button>
         </div>
     </div>
   </div>
 </footer>
+
+<div class="copyright py-1">
+    <span>Copyright &copy; {{currentYear}} Premier League Hub</span>
+</div>
 
 </div>
 
@@ -58,7 +62,11 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+    currentYear: new Date().getFullYear(),
+  }
+}
 }
 </script>
 
@@ -112,6 +120,32 @@ export default {
     border-radius: 0;
     background-color: var(--red-theme);
     font-weight: 600;
+}
+
+.copyright {
+    background-color: var(--secondary-purple-theme);
+    box-shadow:0px 1px 8px black;
+    text-align: center;
+}
+.copyright span{
+    font-size: 0.8rem;
+    font-weight: 500;
+    word-spacing: 2px;
+}
+
+@media (max-width: 992px) {
+
+.btn-secondary {
+  width: 100%;
+  padding: 6px;
+  font-weight: 2rem;
+  margin-left: 0!important;
+}
+
+.btn-sm {
+  font-size: 1rem;
+}
+
 }
 
 </style>

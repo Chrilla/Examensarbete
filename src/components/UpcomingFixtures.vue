@@ -14,20 +14,20 @@
             <div class="fixture pt-2" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="limit">
                 <div v-for="fixture in upcomingFixtures" v-bind:key="fixture.upcomingFixtures">
                 <div class="d-flex justify-content-between align-items-center">
-                    <div class="col-4"><span class="fixture-team">{{fixture.homeTeam.name}}</span></div>
+                    <div class="col-5 col-sm-4"><span class="fixture-team">{{fixture.homeTeam.name}}</span></div>
 
                     <div class="d-flex">
-                        <img src="@/assets/manutd-badge.svg" alt="Home team club crest">
+                        <img class="d-none d-lg-block" src="@/assets/manutd-badge.svg" alt="Home team club crest">
                         <div class="text-center">
                             <div class="fixture-time mx-4">
                                 <span>{{fixture.utcDate.charAt(11)+""+fixture.utcDate.charAt(12)+""+fixture.utcDate.charAt(13)+""+fixture.utcDate.charAt(14)+""+fixture.utcDate.charAt(15)}}</span>
                             </div>
                             <small class="fixture-date text-white">{{fixture.utcDate.charAt(0)+""+fixture.utcDate.charAt(1)+""+fixture.utcDate.charAt(2)+""+fixture.utcDate.charAt(3)+""+fixture.utcDate.charAt(4)+""+fixture.utcDate.charAt(5)+""+fixture.utcDate.charAt(6)+""+fixture.utcDate.charAt(7)+""+fixture.utcDate.charAt(8)+""+fixture.utcDate.charAt(9)}}</small>
                         </div>
-                        <img src="@/assets/manutd-badge.svg" alt="Away team club crest">
+                        <img class="d-none d-lg-block" src="@/assets/manutd-badge.svg" alt="Away team club crest">
                     </div>
                     
-                    <div class="col-4 text-right"><span class="fixture-team">{{fixture.awayTeam.name}}</span></div>
+                    <div class="col-5 col-sm-4 text-right"><span class="fixture-team">{{fixture.awayTeam.name}}</span></div>
                 </div>
                 <hr>
             </div>
@@ -37,34 +37,6 @@
   </div>
 
 </template>
-
-<!-- TEAM FORM -->
-
-<!-- <div class="current-form col-3">
-    <h4 class="text-center">Current form</h4>
-
-    <img class="pr-2" src="@/assets/manutd-badge-small.svg" alt="">
-    <span class="last-five">Last five:
-        <b-badge class="win-badge ml-1 mr-1">W</b-badge>
-        <b-badge class="win-badge mr-1">W</b-badge>
-        <b-badge class="loss-badge mr-1">L</b-badge>
-        <b-badge class="draw-badge mr-1">D</b-badge>
-        <b-badge class="loss-badge">L</b-badge>
-    </span>
-
-    <br class="mb-2">
-
-    <img class="pr-2" src="@/assets/manutd-badge-small.svg" alt="">
-    <span class="last-five">Last five:
-        <b-badge class="win-badge ml-1 mr-1">W</b-badge>
-        <b-badge class="win-badge mr-1">W</b-badge>
-        <b-badge class="loss-badge mr-1">L</b-badge>
-        <b-badge class="draw-badge mr-1">D</b-badge>
-        <b-badge class="loss-badge">L</b-badge>
-    </span>
-
-    <hr class="form-hr">
-</div> -->
 
 <script>
 
@@ -160,44 +132,12 @@ hr {
     margin-bottom: 12px;
 }
 
-.current-form {
-    position: absolute;
-    right: 0;
-    top: -68%;
-    left: 75%;
-    bottom: 0;
-}
-.current-form h4 {
-    font-size: 1.3rem;
-}
-
 .fixture-row {
     position: relative;
 }
 
 .form-hr {
     margin-top: 35px;
-}
-
-.win-badge {
-    background-color: #05F26C;
-    color: var(--main-purple-theme);
-    border-radius: 0;
-}
-.loss-badge {
-    background-color: var(--red-theme);
-    border-radius: 0;
-    padding-right: 6px;
-    padding-left: 6px;
-}
-.draw-badge {
-    background-color: var(--light-blue-theme);
-    color: var(--main-purple-theme);
-    border-radius: 0;
-}
-
-.last-five {
-    font-weight: 500;
 }
 
 .fixture-team {
@@ -230,6 +170,41 @@ hr {
 
 .loader .spinner {
     color: var(--link-theme);
+}
+
+@media (max-width: 992px) {
+
+.fixture-team {
+    font-size: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-align: center;
+}
+
+.fixture-time {
+    font-size: 1rem;
+    padding-left: 5px!important;
+    padding-right: 5px!important;
+    margin-left: 5px!important;
+    margin-right: 5px!important;
+}
+.fixture-time span {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.fixtures-div {
+    padding: 5px;
+}
+
+.news-heading {
+    font-size: 1.2rem;
+}
+
 }
 
 </style>

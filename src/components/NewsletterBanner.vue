@@ -2,20 +2,20 @@
   
   <div class="py-5">
       <div class="newsletter-banner">
-        <div class="container d-flex">
+        <div class="container d-flex flex-wrap flex-md-nowrap">
             <div class="row justify-content-between">
 
-            <div class="col-10">
-                <img src="@/assets/rainy-football.jpg" alt="Newsletter banner image">
+            <div class="col-12 col-md-11">
+                <img class="d-none d-lg-block" src="@/assets/rainy-football.jpg" alt="Newsletter banner image">
             </div>
 
         </div>
 
-        <div class="col-6 my-auto">
+        <div class="my-auto newsletter-form col-12 col-md-12 col-lg-6">
             <h4>Sign up for the Premier League Hub newsletter by filling in your email below</h4>
-            <div class="d-flex mt-4 col-10 pl-0">
+            <div class="d-flex flex-wrap flex-sm-nowrap mt-4 pl-0 newsletter-input">
                 <b-form-input title="Newsletter form field, enter email address" size="sm" class="mr-sm-2" placeholder="Email address..."></b-form-input>
-                <b-button size="sm" class="my-2 ml-1 px-3 my-sm-0 d-flex align-items-center" type="submit">Subscribe<i class="fas fa-envelope pl-2"></i></b-button>
+                <b-button size="sm" class="my-2 ml-1 px-3 my-sm-0 d-md-flex align-items-center" type="submit">Subscribe<i class="fas fa-envelope pl-2"></i></b-button>
             </div>
         </div>
 
@@ -62,6 +62,55 @@ h4 {
 
 img {
     width: 100%;
+}
+
+@media (max-width: 992px) {
+
+img {
+  padding-bottom: 15px;
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 6px;
+  font-weight: 2rem;
+  margin-left: 0!important;
+}
+
+.btn-sm {
+  font-size: 1rem;
+}
+
+.newsletter-form {
+    padding: 0;
+}
+
+.newsletter-input {
+    padding-right: 0;
+    margin-top: 10px!important;
+}
+
+.newsletter-banner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+h4 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+}
+
+@media (min-width: 992px) {
+.newsletter-form {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+img {
+    height: 100%;
+}
+
 }
 
 </style>

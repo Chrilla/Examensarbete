@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex flex-wrap outline-screen-reader" tabindex="0" v-if="newsIndex <= newsToShow">
 
-        <div class="col-6 news-item" v-for="newsIndex in newsToShow" :key="newsIndex.newsToShow">
+        <div class="col-12 col-sm-6 news-item" v-for="newsIndex in newsToShow" :key="newsIndex.newsToShow">
           <div class="small-news">
               <b-badge>{{smallNews[newsIndex - 1].newsPost.badge}}</b-badge>
               <div class="img-div">
@@ -160,6 +160,16 @@ p {
     height: 1px;
     background-color: var(--main-purple-theme);
     opacity: 0.6
+}
+
+@media (max-width: 576px) {
+
+.news-item:nth-child(odd),
+.news-item:nth-child(even) {
+    padding-left: 0;
+    padding-right: 0px;
+}
+
 }
 
 </style>
