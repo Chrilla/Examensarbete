@@ -7,16 +7,16 @@
       <div class="news-bg pb-4">
 
           <div class="pt-4 container" v-for="item in popularNews" :key="item.popularNews">
-            <div class="d-flex">
+            <router-link to="/"><div class="d-flex">
                 <div class="col-5">
                     <img :src='item.newsArticle.image' alt="Popular news image">
                 </div>
                 <div class="col-7">
                     <b-badge class="mb-3">{{item.newsArticle.badge}}</b-badge>
-                    <h6 class="text-light">{{item.newsArticle.title}}</h6>
-                    <small class="text-light">{{item.newsArticle.date}}</small>
+                    <h6>{{item.newsArticle.title}}</h6>
+                    <small>{{item.newsArticle.date}}</small>
                 </div>
-            </div>
+            </div></router-link>
             
             <div class="container"><hr class="mt-4 mb-0"></div>
             
@@ -55,7 +55,6 @@ export default {
     padding: 14.2px 0px 14.2px 0px;
     font-weight: 600;
     font-size: 1.55rem;
-    
 }
 
 .news-bg {
@@ -80,6 +79,13 @@ hr {
     border-radius: 0;
     padding: 5px;
     font-size: 0.7rem;
+}
+
+a {
+    color: #fff;
+}
+a:hover {
+    color: #fff;
 }
 
 </style>

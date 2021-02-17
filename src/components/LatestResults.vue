@@ -108,13 +108,6 @@ h4 {
     font-weight: 600;
 }
 
-.time-badge {
-    background-color: var(--red-theme);
-    border-radius: 0;
-    padding: 8px 15px 8px 15px;
-    font-size: 1.40rem;
-}
-
 span {
     color: var(--white);
 }
@@ -138,6 +131,7 @@ hr {
     border-radius: 0;
     padding: 2px 15px 2px 15px;
     font-size: 1.4rem;
+    min-width: 5.6rem;
 }
 
 .fixture-date {
@@ -180,6 +174,7 @@ hr {
     padding-right: 5px!important;
     margin-left: 5px!important;
     margin-right: 5px!important;
+    min-width: 3.75rem;
 }
 .fixture-time span {
     padding-left: 0px!important;

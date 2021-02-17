@@ -8,13 +8,13 @@
       </div> -->
 
     <span v-if="loggedIn"></span>
-    <span class="pr-3" v-else v-b-modal.modal-register>Register account</span>
+    <span class="register-account pr-3" v-else v-b-modal.modal-register>Register account</span>
     <b-modal v-if="showModal" id="modal-register" title="Register an account" hide-footer centered>
         <RegisterModal/>
     </b-modal>
 
     <button class="sign-out-button" v-if="loggedIn" @click="signOut">Sign out<i class="fas fa-sign-out-alt pl-2"></i></button>
-    <span v-else v-b-modal.modal-login>Sign in<i class="fas fa-user ml-2"></i></span>
+    <span class="sign-in-button" v-else v-b-modal.modal-login>Sign in<i class="fas fa-user ml-2"></i></span>
     <b-modal modal-class="modal-bg" v-if="showModal" id="modal-login" title="Login or register an account" hide-footer centered>
         <LoginModal/>
     </b-modal>
@@ -70,14 +70,29 @@ export default {
 
 <style scoped>
 
+.register-account:hover {
+  color: var(--link-theme);
+  transition-timing-function: ease-in;
+  transition: 0.1s;
+}
+.register-account:active {
+  transform: translateY(5%);
+}
+
+.sign-in-button:hover, .sign-out-button:hover {
+  color: var(--link-theme);
+  transition-timing-function: ease-in;
+  transition: 0.1s;
+}
+.sign-in-button:active, .sign-out-button:active {
+  transform: translateY(5%);
+}
+
 .sign-out-button {
   padding: 0;
   background-color: transparent;
   border: none;
   color: var(--link-blue-theme);
-}
-.sign-out-button:hover {
-  color: #fff;
 }
 
 ::v-deep .modal-body {
@@ -102,12 +117,17 @@ export default {
   margin: 0;
 }
 
+::v-deep #modal-login {
+  padding-right: 0!important;
+}
+
 ::v-deep .nav-tabs {
   width: 75%;
   border-radius: none;
   text-align: center;
   margin: auto;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid var(--light-blue-theme);
+  
 }
 
 ::v-deep .nav-tabs li {
@@ -115,7 +135,7 @@ export default {
 }
 
 ::v-deep .nav-tabs .nav-link {
-  color: #fff;
+  color: var(--light-blue-theme);
   margin-bottom: 0;
   border: none;
   border-radius: 0;
@@ -124,12 +144,11 @@ export default {
 
 ::v-deep .nav-tabs .nav-link:hover {
   color: #fff;
-  background-color: var(--red-theme);
-  border: none;
+  background-color: #c70046d7;
 }
-
-::v-deep #modal-login {
-  padding-right: 0!important;
+::v-deep .nav-tabs .nav-link.active {
+  color: #fff;
+  background-color: var(--red-theme);
 }
 
 </style>

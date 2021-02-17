@@ -84,7 +84,7 @@ export default {
   border-radius: none;
   text-align: center;
   margin: auto;
-  border-bottom: 1px solid var(--light-blue-theme);
+  border-bottom: 2px solid var(--light-blue-theme);
   font-size: 1.2rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

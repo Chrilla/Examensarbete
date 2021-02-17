@@ -13,7 +13,7 @@
       </div>
     </div>
 
-  <b-navbar role="navigation" class="navbar flex-wrap py-3" toggleable="lg">
+  <b-navbar role="navigation" class="navbar flex-wrap py-3" toggleable="xl">
   <a href="/">
     <b-navbar-brand class="navbar-brand d-none d-sm-inline"><img src="@/assets/brandlogo.svg" alt="brand logo" aria-label="Brand logo, click to go to startpage"></b-navbar-brand>
     <span>Premier League Hub</span>
@@ -80,6 +80,14 @@ export default {
   font-size: 1.25rem;
   color: var(--light-blue-theme);
 }
+.social-icons i:hover {
+  color: var(--link-theme);
+  transform: scale(1.1);
+  transition: 100ms linear;
+}
+.social-icons i:active {
+  transform: translateY(5%);
+}
 
 .sign-in {
   padding-right: 20px;
@@ -108,7 +116,9 @@ export default {
 }
 .navbar-light .navbar-nav .nav-link:hover, .nav-link a:hover {
   color: var(--red-theme);
-  text-decoration: none;
+}
+.navbar-light .navbar-nav .nav-link:active, .nav-link a:active {
+  transform: translateY(3%);
 }
 
 .navbar-brand {
@@ -136,13 +146,25 @@ export default {
   box-shadow: none;
 }
 
+form button:hover {
+  background-color: transparent;
+}
+form button:active {
+  background-color: transparent!important;
+  transform: translateY(8%);
+}
+form button:focus {
+  background-color: transparent!important;
+  box-shadow: none;
+}
+
 .input-icon{
   position: absolute;
   right: 3px;
   top: calc(50% - 0.9em); /* Keep icon in center of input, regardless of the input height */
   border: none;
   background: none;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 input{
   padding-left: 15px;
@@ -180,6 +202,5 @@ a.router-link-exact-active {
 }
 
 }
-
 
 </style>

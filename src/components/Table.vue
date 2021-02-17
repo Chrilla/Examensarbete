@@ -11,20 +11,20 @@
             <span class="mr-5 pr-5">Club</span>
             <span>Pts</span>
         </div>
-        <hr class="mt-1">
+        <hr class="mt-1 mb-2">
 
         <div v-for="stats in tableStats" v-bind:key="stats.tableStats">
-            <div>
+            <router-link to="/"><div class="table-row">
                 <span class="table-stats">{{stats.position}}</span>
                 <span class="px-2"><img class="club-img" :src='stats.team.crestUrl' alt="Club crest"></span>
                 <span class="table-stats team-name">{{stats.team.name}}</span>
                 <span class="table-stats float-right">{{stats.points}}</span>
-            </div>
+            </div></router-link>
             <hr class="hr-between">
         </div>
 
-        <div class="text-center pt-1 pb-1">
-            <router-link to="/table"><span>View full table with all statistics<i class="fas fa-arrow-right fa-xs pl-2"></i></span></router-link>
+        <div class="text-center pt-3 pb-1">
+            <router-link to="/table"><span class="table-link">View full table with all statistics<i class="fas fa-arrow-right fa-xs pl-2"></i></span></router-link>
         </div>
 
         <!-- <div v-for="stats in tableStats" v-bind:key="stats.tableStats">
@@ -82,6 +82,11 @@ export default {
     color: var(--white);
 }
 
+.table-row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 hr {
     height: 1px;
     background-color: var(--white);
@@ -90,8 +95,8 @@ hr {
 
 .hr-between {
     opacity: 0.4;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 .team-stats {
@@ -110,8 +115,19 @@ hr {
     font-weight: 500;
 }
 
-a span {
-color: #7FC4FD;
+a {
+color: #fff;
+}
+a:hover {
+color: var(--link-theme);
+text-decoration: none;
+}
+
+.table-link {
+    color: var(--link-theme);
+}
+.table-link:hover {
+    color: #ff2882;
 }
 
 </style>

@@ -4,11 +4,11 @@
     <b-form class="text-center d-flex flex-column mx-auto w-75" @submit.prevent="pressedRegister">
         <h2 class="mb-5">Register an account</h2>
         <b-form-group class="pb-2">
-            <b-form-input type="email" v-model="email" placeholder="Email address..."></b-form-input>
+            <b-form-input title="Enter your email address" type="email" v-model="email" placeholder="Email address..."></b-form-input>
         </b-form-group>
 
         <b-form-group class="password pb-4">
-            <b-form-input type="password" v-model="password" placeholder="Password..."></b-form-input>
+            <b-form-input title="Enter your password" type="password" v-model="password" placeholder="Password..."></b-form-input>
         </b-form-group>
         <b-button type="submit">Register</b-button>
     </b-form>
@@ -58,6 +58,29 @@ button {
     border-radius: 0;
     font-weight: 600;
     font-size: 1.4rem;
+}
+button:hover {
+  background-color: #c70046d7;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition-timing-function: ease-in;
+  transition: 0.1s;
+}
+button:focus {
+    background-color: #c70046d7;
+    box-shadow: none;
+}
+button:active {
+    transform: translateY(5%);
+    background-color: #c70046d7!important;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+.form-control:focus::placeholder {
+    color: var(--main-purple-theme);
 }
 
 .error {

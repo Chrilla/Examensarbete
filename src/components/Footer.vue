@@ -2,7 +2,7 @@
 
 <div class="footer-wrapper">
 
-<footer class="container-fluid d-flex justify-content-around text-sm-center text-xl-left py-5">
+<footer class="container-fluid d-flex justify-content-around text-sm-center text-xl-left pt-5 pb-4">
   <div class="row">
     <div class="col-6 col-sm-3 col-xl-2 contact">
       <h5>Contact us</h5>
@@ -14,7 +14,7 @@
       </ul>
     </div>
     <div class="col-6 col-sm-3 col-xl-2">
-      <h5>Customer service</h5>
+      <h5>User service</h5>
       <ul class="list-unstyled text-small">
         <li><a href="#">Resource</a></li>
         <li><a href="#">Resource name</a></li>
@@ -76,22 +76,27 @@ export default {
   background: linear-gradient(to right,rgba(52, 0, 64, 0.699), rgba(52, 0, 64, 0.699)), url("../assets/footer-bg.jpg");
   background-size: cover;
   background-color: var(--main-purple-theme);
-  color: var(--white);
+  color: #fff;
   border-top: 20px solid var(--red-theme);
 }
 .footer-wrapper li a {
-    color: var(--white);
+    color: #fff;
     font-size: 0.9rem;
     font-weight: 500;
 }
+.footer-wrapper li a:hover {
+    color: #ff2882;
+    text-decoration: none;
+}
 .footer-wrapper .contact li span {
-    color: var(--white);
+    color: #fff;
     font-size: 0.9rem;
     font-weight: 500;
 }
 .footer-wrapper h5 {
     font-weight: 600;
     padding-bottom: 5px;
+    color: var(--link-theme);
 }
 .footer-wrapper p {
     font-weight: 500;
@@ -101,7 +106,7 @@ export default {
     padding-right: 10px;
     padding-bottom: 10px;
     font-size: 1.6rem;
-    color: var(--light-blue-theme);
+    color: var(--link-theme);
 }
 .social-icons span {
     font-size: 1.1rem;
@@ -121,6 +126,26 @@ export default {
     background-color: var(--red-theme);
     font-weight: 600;
 }
+.btn-secondary:hover {
+    background-color: #c70046d7;
+    transition-timing-function: ease-in;
+    transition: 0.1s;
+}
+.btn-secondary:active {
+    background-color: #c70046d7!important;
+    transform: scale(0.98);
+}
+.btn-secondary:focus {
+    background-color: #c70046d7!important;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+.form-control:focus::placeholder {
+    color: var(--main-purple-theme);
+}
 
 .copyright {
     background-color: var(--secondary-purple-theme);
@@ -134,6 +159,10 @@ export default {
 }
 
 @media (max-width: 992px) {
+
+.footer-wrapper {
+  text-align: center;
+}
 
 .btn-secondary {
   width: 100%;

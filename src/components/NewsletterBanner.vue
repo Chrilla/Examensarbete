@@ -59,6 +59,26 @@ h4 {
     background-color: var(--red-theme);
     font-weight: 600;
 }
+.btn-secondary:hover {
+    background-color: #c70046d7;
+    transition-timing-function: ease-in;
+    transition: 0.1s;
+}
+.btn-secondary:active {
+    background-color: #c70046d7!important;
+    transform: scale(0.98);
+}
+.btn-secondary:focus {
+    background-color: #c70046d7!important;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+.form-control:focus::placeholder {
+    color: var(--main-purple-theme);
+}
 
 img {
     width: 100%;

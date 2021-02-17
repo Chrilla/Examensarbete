@@ -3,10 +3,8 @@
 
 <div class="wrapper container py-5">
 
-  
-
   <section>
-      <header>
+    <header>
         <h1 class="mb-0 py-2">Premier League Hub Chat</h1>
     </header>
       <main class="py-4 px-2">
@@ -19,7 +17,7 @@
       </main>
       <form v-on:submit.prevent="sendMessage">
           <input title="Enter your chat message" v-model="message" type="text" placeholder="Enter your message...">
-          <button :disabled="!message" type="submit">Send<i class="fas fa-comment pl-2"></i></button>
+          <button :disabled="!message" type="submit">Send<i class="d-none d-sm-block fas fa-comment pl-2"></i></button>
       </form>
   </section>
 
@@ -191,6 +189,31 @@ export default {
     position: relative;
     color: #fff;
     text-align: center;
+}
+
+@media (max-width: 992px) {
+
+.wrapper {
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+}
+
+.wrapper section main {
+    max-height: 570px;
+}
+
+.wrapper section form input {
+    width: 80%;
+    font-size: 1.1rem;
+}
+.wrapper section form button {
+    font-size: 1.1rem;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
 }
 
 </style>

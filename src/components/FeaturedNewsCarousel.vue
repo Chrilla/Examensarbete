@@ -14,7 +14,7 @@
       @sliding-end="onSlideEnd"
       v-for="newscontent in news" v-bind:key="newscontent.news"
     >
-      <b-carousel-slide>
+      <router-link to="/"><b-carousel-slide>
         <template #img>
           <div class="img-div">
                 <b-badge>{{newscontent.category[0]}}</b-badge>
@@ -31,16 +31,16 @@
                 </span>
             </div>
         </template>
-      </b-carousel-slide>
+      </b-carousel-slide></router-link>
 
-      <b-carousel-slide>
+      <router-link to="/"><b-carousel-slide>
         <template #img>
           <div class="img-div">
                 <b-badge>{{newscontent.category[0]}}</b-badge>
                 <img class="d-block img-fluid w-100" width="1024" height="480" :src='newscontent.image[1]' alt="Photo of Harry Kane">
             </div>
             <div class="card-body">
-                <small>{{ newscontent.date[1] }}</small>
+                <small class="no-hover">{{ newscontent.date[1] }}</small>
                 <h5 class="mt-2">{{ newscontent.title[1] }}</h5>
                 <p class="mb-0">{{ newscontent.text }}</p>
                 <span class="socials d-flex justify-content-end pr-4 pb-2">
@@ -50,9 +50,9 @@
                 </span>
             </div>
         </template>
-      </b-carousel-slide>
+      </b-carousel-slide></router-link>
 
-      <b-carousel-slide>
+      <router-link to="/"><b-carousel-slide>
         <template #img>
           <div class="img-div">
                 <b-badge>{{newscontent.category[1]}}</b-badge>
@@ -69,7 +69,7 @@
                 </span>
             </div>
         </template>
-      </b-carousel-slide>
+      </b-carousel-slide></router-link>
 
     </b-carousel>
   </div>
@@ -121,6 +121,9 @@ import { db } from '../firebase';
     min-height: 250px;
     max-height: 400px;
 }
+.news-carousel img:hover {
+    cursor: pointer;
+}
 
 .img-div {
     position: relative;
@@ -146,6 +149,17 @@ import { db } from '../firebase';
     padding: 10px 20px 0px 20px;
     bottom: 0;
     text-shadow: none;
+}
+.card-body:hover {
+    text-decoration: underline;
+    background-color: #f6f6f6;
+}
+
+a {
+  color: var(--main-purple-theme);
+}
+a:hover {
+  color: var(--main-purple-theme);
 }
 
 .card .socials span {

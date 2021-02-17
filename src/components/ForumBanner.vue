@@ -59,6 +59,19 @@ h4 {
     font-weight: 600;
     font-size: 1.1rem;
 }
+.btn-secondary:hover {
+    background-color: #c70046d7;
+    transition-timing-function: ease-in;
+    transition: 0.1s;
+}
+.btn-secondary:active {
+    background-color: #c70046d7!important;
+    transform: scale(0.98);
+}
+.btn-secondary:focus {
+    background-color: #c70046d7!important;
+    box-shadow: none;
+}
 
 img {
     width: 100%;

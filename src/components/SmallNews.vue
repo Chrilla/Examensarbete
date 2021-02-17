@@ -8,11 +8,11 @@
                   <img alt="Media image from API" :src='smallNews[newsIndex - 1].newsPost.image'>
               </div>
               <div class="card">
-                <div class="card-body">
+                <router-link to="/"><div class="card-body">
                     <small>{{smallNews[newsIndex - 1].newsPost.date}}</small>
                     <h5 class="card-title mt-2">{{smallNews[newsIndex - 1].newsPost.title}}</h5>
                     <p class="card-text">{{smallNews[newsIndex - 1].newsPost.text}}</p>
-                </div>
+                </div></router-link>
                 <hr aria-hidden="true" class="mb-2 mt-0">
                 <div aria-hidden="true" class="socials d-flex justify-content-between pr-4 pb-2">
                     <small class="pl-4 my-auto">{{smallNews[newsIndex - 1].newsPost.author}}</small>
@@ -96,6 +96,14 @@ export default {
     border: none;
     width: 100%;
 }
+.news-button:hover {
+    background-color: #c70046d7;
+    transition-timing-function: ease-in;
+    transition: 0.1s;
+}
+.news-button:active {
+    transform: scale(0.98);
+}
 
 p {
   display: -webkit-box;
@@ -160,6 +168,18 @@ p {
     height: 1px;
     background-color: var(--main-purple-theme);
     opacity: 0.6
+}
+
+.card-body:hover {
+    text-decoration: underline;
+    background-color: #f6f6f6;
+}
+
+a {
+  color: var(--main-purple-theme);
+}
+a:hover {
+  color: var(--main-purple-theme);
 }
 
 @media (max-width: 576px) {
