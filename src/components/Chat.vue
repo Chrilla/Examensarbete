@@ -17,7 +17,7 @@
       </main>
       <form v-on:submit.prevent="sendMessage">
           <input title="Enter your chat message" v-model="message" type="text" placeholder="Enter your message...">
-          <button :disabled="!message" type="submit">Send<i class="d-none d-sm-block fas fa-comment pl-2"></i></button>
+          <button :disabled="!message" type="submit">Send<i class="d-none d-sm-inline fas fa-comment pl-2"></i></button>
       </form>
   </section>
 

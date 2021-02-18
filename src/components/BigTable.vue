@@ -3,12 +3,10 @@
   <div class="table-bg">
       <div class="table container-xl mt-5 mb-5 pb-3">
           <div class="table-logo d-flex justify-content-center align-items-center text-white py-3">
-              <h1>Premier</h1>
-                <img class="mx-4" src="@/assets/brandlogo.svg" alt="brand logo">
-              <h1>League</h1>
+              <h1>Premier League standings 2020/2021</h1>
           </div>
         <table class="mx-auto col-12">
-            <tr class="text-center">
+            <tr class="table-columns text-center">
                 <th class="pl-3">Pos</th>
                 <th class="pl-3">Club</th>
                 <th>Pl</th>
@@ -84,11 +82,9 @@ export default {
     background-color: var(--main-purple-theme);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding-top: 15px;
+    border-radius: 4px;
 }
 
-.table th, .table td {
-    border-top: none!important;
-}
 
 .table td {
     border-bottom: 2px solid var(--main-purple-theme);
@@ -101,6 +97,12 @@ th {
 tr th {
     font-size: 1.35rem;
     font-weight: 600;
+    background-color: var(--secondary-purple-theme);
+    color: var(--light-blue-theme);
+}
+
+.table-columns {
+    border-top: 2px solid var(--link-theme);
 }
 
 .table-row{
@@ -109,16 +111,21 @@ tr th {
 
 .table-row td{
 	color: #fff;
-    background-color: var(--red-theme);
 }
 .table-row:hover td{
 	color: #fff;
     background-color: var(--blue-theme);
 }
 
+.table tr:nth-child(even) {
+    background-color: #c40048;
+}
+.table tr:nth-child(odd) {
+    background-color: var(--red-theme);
+}
+
 table tr td:nth-child(1){
 	color: #fff;
-    background-color: #d3004d;
     font-weight: 500;
 }
 table tr td:nth-child(n+4){
@@ -137,7 +144,6 @@ table tr td:nth-child(n+4){
 
 .table-row .table-points {
     font-weight: 600;
-    background-color: #d3004d;
 }
 
 .table-row .table-played-games {

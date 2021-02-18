@@ -60,7 +60,7 @@ export default {
 <style scoped>
 
 .home {
-  background: linear-gradient(to right,rgba(52, 0, 64, 0.5), rgba(52, 0, 64, 0.5)), url("../assets/home-bg-abstract.svg");
+  background: linear-gradient(to left,rgba(146, 63, 255, 0.199), rgba(52, 0, 64, 0.5)), url("../assets/home-bg-abstract.svg");
   background-size: contain;
   background-position: center top;
   background-color: var(--main-purple-theme);
@@ -103,7 +103,6 @@ export default {
 ::v-deep .nav-tabs .nav-link.active {
   background-color: var(--red-theme);
   color: #fff;
-  margin-right: 4px;
   border-bottom: none;
 }
 ::v-deep .nav-tabs .nav-link.active:hover {

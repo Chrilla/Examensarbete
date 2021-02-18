@@ -1,7 +1,7 @@
 <template>
 
 <div class="footer-wrapper">
-
+<button title="Click to get back to top" @click="scrollToTop()" id="scrollToTopBtn"><i class="fas fa-arrow-up"></i></button>
 <footer class="container-fluid d-flex justify-content-around text-sm-center text-xl-left pt-5 pb-4">
   <div class="row">
     <div class="col-6 col-sm-3 col-xl-2 contact">
@@ -61,16 +61,49 @@
 </template>
 
 <script>
+
+var rootElement = document.documentElement
+
 export default {
   data() {
     return {
     currentYear: new Date().getFullYear(),
   }
-}
+},
+
+  methods: {
+      scrollToTop() {
+      // Scroll to top logic
+      rootElement.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      })
+    }
+  }
 }
 </script>
 
 <style scoped>
+
+#scrollToTopBtn {
+  position: absolute;
+  right: 1%;
+  margin-top: 20px;
+  background-color: var(--blue-theme);
+  border: none;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  padding: 8px 12px 8px 12px;
+}
+#scrollToTopBtn:hover {
+    background-color: #7833d1;
+    transition-timing-function: ease-in;
+    transition: 0.1s;
+}
+#scrollToTopBtn:active {
+    transform: scale(0.95);
+}
 
 .footer-wrapper {
   background: linear-gradient(to right,rgba(52, 0, 64, 0.699), rgba(52, 0, 64, 0.699)), url("../assets/footer-bg.jpg");
@@ -173,6 +206,10 @@ export default {
 
 .btn-sm {
   font-size: 1rem;
+}
+
+#scrollToTopBtn {
+  display: none;
 }
 
 }

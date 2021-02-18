@@ -14,7 +14,7 @@
         <div class="my-auto newsletter-form text-center mx-auto col-lg-6">
             <h4>Have you visited our forum yet? <br class="d-none d-lg-block"> Discuss football with other fans!</h4>
             <div class="mt-4 pl-0">
-                <b-button size="sm" class="my-2 ml-1 px-3 py-2 my-sm-0" type="submit">Take me there!</b-button>
+                <router-link to="/chat"><b-button size="sm" class="my-2 ml-1 px-3 py-2 my-sm-0" type="submit">Take me there!</b-button></router-link>
             </div>
         </div>
 

@@ -40,6 +40,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Firefox */
 * {
   scrollbar-width: thin;
   scrollbar-color: rgb(165, 165, 165) #333;
