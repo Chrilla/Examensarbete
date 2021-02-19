@@ -1,6 +1,6 @@
 <template>
   
-  <div class="py-5">
+  <div class="newsletter-wrapper pb-5 my-5">
       <div class="newsletter-banner">
         <div class="container d-flex flex-wrap flex-md-nowrap">
             <div class="row justify-content-between">
@@ -34,7 +34,7 @@ export default {
 <style scoped>
 
 .newsletter-banner {
-    background: linear-gradient(to right,rgba(52, 0, 64, 0.699), rgba(52, 0, 64, 0.699)), url("../assets/newsletter-banner-bg.jpg");
+    background: linear-gradient(to right,rgba(52, 0, 64, 0.603), rgba(52, 0, 64, 0.603)), url("../assets/newsletter-banner-bg.jpg");
     background-size: cover;
     color: var(--white);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -85,6 +85,10 @@ img {
 }
 
 @media (max-width: 992px) {
+
+.newsletter-wrapper {
+    margin-bottom: 0!important;
+}
 
 img {
   padding-bottom: 15px;

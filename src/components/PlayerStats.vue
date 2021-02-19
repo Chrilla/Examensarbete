@@ -16,7 +16,7 @@
                 <td class="table-player pl-3">{{stats.player.name}}</td>
                 <td class="table-club"><router-link to="/"><span class="px-1"></span>{{stats.team.name}}</router-link></td>
                 <td class="table-nationality">{{stats.player.nationality}}</td>
-                <td class="table-played-games">{{stats.numberOfGoals}}</td>
+                <td class="table-goals">{{stats.numberOfGoals}}</td>
             </tr>
         </table>
     </div>
@@ -116,8 +116,8 @@ tr th {
     font-weight: 400;
 }
 
-.table-row .table-played-games {
-    font-weight: 500;
+.table-row .table-goals {
+    font-weight: 600;
     border-left: 2px solid var(--main-purple-theme);
     text-align: center;
 }

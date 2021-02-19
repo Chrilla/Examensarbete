@@ -9,7 +9,7 @@
     </header>
       <main class="py-4 px-2">
           <div v-for="(msg, index) in messages" v-bind:key="'index-'+index" :class="['message', sentOrReceived(msg.userUID)]">
-              <img title="User" :src="msg.photoURL" :alt="msg.displayName">
+              <img title="User image" :src="msg.photoURL" :alt="msg.displayName">
               <p>{{msg.text}}</p>
           </div>
 

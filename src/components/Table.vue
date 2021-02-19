@@ -18,7 +18,7 @@
                 <span class="table-stats">{{stats.position}}</span>
                 <span class="px-2"><img class="club-img" :src='stats.team.crestUrl' alt="Club crest"></span>
                 <span class="table-stats team-name">{{stats.team.name}}</span>
-                <span class="table-stats float-right">{{stats.points}}</span>
+                <span class="table-stats table-points float-right">{{stats.points}}</span>
             </div></router-link>
             <hr class="hr-between">
         </div>
@@ -113,6 +113,10 @@ hr {
 
 .table-stats {
     font-weight: 500;
+}
+
+.table-points {
+    margin-top: 2px;
 }
 
 a {

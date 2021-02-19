@@ -17,7 +17,8 @@
                     <div class="col-5 col-sm-4"><span class="fixture-team">{{result.homeTeam.name}}</span></div>
 
                     <div class="d-flex">
-                        <img class="d-none d-lg-block" src="@/assets/manutd-badge.svg" alt="Club crest home team">
+                        <!-- <img class="d-none d-lg-block" src="@/assets/manutd-badge.svg" alt="Club crest home team"> -->
+                        <i title="Club crest home team" class="d-none my-auto d-lg-block home-team-crest fas fa-tshirt fa-3x"></i>
                         <div class="text-center">
                             <div class="fixture-time mx-4">
                                 <span class="pr-3">{{result.score.fullTime.homeTeam}}</span>
@@ -26,7 +27,8 @@
                             </div>
                             <small class="fixture-date text-white">{{result.utcDate.charAt(0)+""+result.utcDate.charAt(1)+""+result.utcDate.charAt(2)+""+result.utcDate.charAt(3)+""+result.utcDate.charAt(4)+""+result.utcDate.charAt(5)+""+result.utcDate.charAt(6)+""+result.utcDate.charAt(7)+""+result.utcDate.charAt(8)+""+result.utcDate.charAt(9)}}</small>
                         </div>
-                        <img class="d-none d-lg-block" src="@/assets/manutd-badge.svg" alt="Club crest away team">
+                        <i title="Club crest away team" class="d-none d-lg-block my-auto away-team-crest fas fa-tshirt fa-3x"></i>
+                        <!-- <img class="d-none d-lg-block" src="@/assets/manutd-badge.svg" alt="Club crest away team"> -->
                     </div>
                     
                     <div class="col-5 col-sm-4 text-right"><span class="fixture-team">{{result.awayTeam.name}}</span></div>
@@ -155,6 +157,21 @@ hr {
 
 .loader .spinner {
     color: var(--link-theme);
+}
+
+.home-team-crest {
+    background: #933FFF;
+    background: -webkit-linear-gradient( #933FFF, #7FC4FD);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.away-team-crest {
+    background: #FF512F;
+    background: -webkit-linear-gradient(#FF512F, #ff8a72);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 @media (max-width: 992px) {

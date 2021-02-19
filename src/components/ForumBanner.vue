@@ -33,7 +33,7 @@ export default {
 <style scoped>
 
 .newsletter-banner {
-    background: linear-gradient(to right,rgba(52, 0, 64, 0.699), rgba(52, 0, 64, 0.699)), url("../assets/newsletter-banner-bg.jpg");
+    background: linear-gradient(to right,rgba(52, 0, 64, 0.603), rgba(52, 0, 64, 0.603)), url("../assets/newsletter-banner-bg.jpg");
     background-size: cover;
     color: var(--white);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
