@@ -3,9 +3,9 @@
 
     <div class="topbar py-2 d-flex justify-content-between align-items-center">
       <div class="social-icons">
-        <a href="#" title="Link to Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="#" title="Link to Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" title="Link to Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Link to Facebook" title="Link to Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Link to Twitter" title="Link to Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Link to Instagram" title="Link to Instagram"><i class="fab fa-instagram"></i></a>
       </div>
 
       <div class="sign-in">
@@ -40,7 +40,7 @@
       <form class="ml-auto">
         <div class="input-wrapper">
           <b-form-input aria-label="Enter your search in the searchfield" size="sm" id="searchfield" type="search" placeholder="Enter your search here..."></b-form-input>
-          <b-button title="Searchfield submit button" for="searchfield" class="fas fa-search input-icon" type="submit"></b-button>
+          <b-button aria-label="Searchfield submit button" title="Searchfield submit button" for="searchfield" class="fas fa-search input-icon" type="submit"></b-button>
         </div>
       </form>
 
@@ -168,6 +168,7 @@ form button:focus {
 }
 input{
   padding-left: 15px;
+  -webkit-padding-end: 7rem;
 }
 .input-wrapper{
   position: relative;

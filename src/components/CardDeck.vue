@@ -3,21 +3,21 @@
 <div class="container card-deck-wrapper card-deck-mobile">
     <div class="d-flex justify-content-center flex-wrap flex-xl-nowrap">
 
-    <button tabindex="0" title="Link to stats" class="stats deck-card d-flex align-items-center m-2" @click="$router.push('/stats')">
+    <button tabindex="0" aria-label="Link to stats" title="Link to stats" class="stats deck-card d-flex align-items-center m-2" @click="$router.push('/stats')">
         <div class="card-text text-center mx-auto">
             <h4>Stats</h4>
             <span>See statistics for top scorers, <br> most assists and more</span>
         </div>
     </button>
 
-    <button tabindex="0" title="Link to history" class="history deck-card d-flex align-items-center m-2" @click="$router.push('/history')">
+    <button tabindex="0" aria-label="Link to history" title="Link to history" class="history deck-card d-flex align-items-center m-2" @click="$router.push('/history')">
         <div class="card-text text-center mx-auto">
             <h4>History</h4>
             <span>Read about the history <br> of the Premier League</span>
         </div>
     </button>
 
-    <button tabindex="0" title="Link to clubs" class="clubs deck-card d-flex align-items-center m-2" @click="$router.push('/clubs')">
+    <button tabindex="0" aria-label="Link to clubs" title="Link to clubs" class="clubs deck-card d-flex align-items-center m-2" @click="$router.push('/clubs')">
         <div class="card-text text-center mx-auto">
             <h4>Clubs</h4>
             <span>Information about all twenty clubs <br> included in the Premier League</span>

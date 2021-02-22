@@ -1,5 +1,5 @@
 <template>
-  <div class="news-carousel" tabindex="0" title="Featured news carousel" >
+  <div class="news-carousel" tabindex="0" aria-label="Featured news carousel" >
     <b-carousel
       id="carousel-1"
       v-model="slide"
@@ -108,6 +108,10 @@ import { db } from '../firebase';
 
 ::v-deep .carousel-indicators {
     display: none;
+}
+
+::v-deep .carousel-control-next-icon:focus {
+  outline: 1px dotted;
 }
 
 .news-carousel {

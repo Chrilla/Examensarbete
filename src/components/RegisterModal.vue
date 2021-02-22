@@ -4,11 +4,11 @@
     <b-form class="text-center d-flex flex-column mx-auto w-75" @submit.prevent="pressedRegister">
         <h2 class="mb-5">Register an account</h2>
         <b-form-group class="pb-2">
-            <b-form-input title="Enter your email address" type="email" v-model="email" placeholder="Email address..."></b-form-input>
+            <b-form-input aria-label="Enter your email address" title="Enter your email address" type="email" v-model="email" placeholder="Email address..."></b-form-input>
         </b-form-group>
 
         <b-form-group class="password pb-4">
-            <b-form-input title="Enter your password" type="password" v-model="password" placeholder="Password..."></b-form-input>
+            <b-form-input aria-label="Enter your password" title="Enter your password" type="password" v-model="password" placeholder="Password..."></b-form-input>
         </b-form-group>
         <b-button type="submit">Register</b-button>
     </b-form>

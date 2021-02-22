@@ -9,14 +9,14 @@
     </header>
       <main class="py-4 px-2">
           <div v-for="(msg, index) in messages" v-bind:key="'index-'+index" :class="['message', sentOrReceived(msg.userUID)]">
-              <img title="User image" :src="msg.photoURL" :alt="msg.displayName">
+              <img aria-label="User image" title="User image" :src="msg.photoURL" :alt="msg.displayName">
               <p>{{msg.text}}</p>
           </div>
 
           <div ref="scrollable"></div>
       </main>
       <form v-on:submit.prevent="sendMessage">
-          <input title="Enter your chat message" v-model="message" type="text" placeholder="Enter your message...">
+          <input aria-label="Enter your chat message" title="Enter your chat message" v-model="message" type="text" placeholder="Enter your message...">
           <button :disabled="!message" type="submit">Send<i class="d-none d-sm-inline fas fa-comment pl-2"></i></button>
       </form>
   </section>
@@ -118,8 +118,8 @@ export default {
     background-color: #38388f;
     font-weight: 500;
     font-size: 1.5rem;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
 .wrapper section form input {
     width: 100%;
@@ -129,8 +129,8 @@ export default {
     border: none;
     font-size: 1.5rem;
     padding: 10px 15px 10px 15px;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
 }
 .wrapper button {
     background-color: #282c34;

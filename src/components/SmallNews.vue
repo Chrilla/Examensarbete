@@ -26,7 +26,7 @@
           </div>
       </div>
 
-      <button title="Click to load more news articles" v-if="showMore" @click="viewMore" class="news-button mt-4 loader d-flex align-items-center justify-content-center">
+      <button aria-label="Click to load more news articles" title="Click to load more news articles" v-if="showMore" @click="viewMore" class="news-button mt-4 loader d-flex align-items-center justify-content-center">
         <div v-if="loader" class="d-flex align-items-center">
             <span class="pr-2">Loading more news...</span>
             <b-spinner class="spinner" label="spinner"></b-spinner>

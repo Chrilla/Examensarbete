@@ -9,13 +9,13 @@
 
     <span v-if="loggedIn"></span>
     <span class="register-account pr-3" v-else v-b-modal.modal-register>Register account</span>
-    <b-modal v-if="showModal" id="modal-register" title="Register an account" hide-footer centered>
+    <b-modal v-if="showModal" id="modal-register" aria-label="Register an account" title="Register an account" hide-footer centered>
         <RegisterModal/>
     </b-modal>
 
     <button class="sign-out-button" v-if="loggedIn" @click="signOut">Sign out<i class="fas fa-sign-out-alt pl-2"></i></button>
     <span class="sign-in-button" v-else v-b-modal.modal-login>Sign in<i class="fas fa-user ml-2"></i></span>
-    <b-modal modal-class="modal-bg" v-if="showModal" id="modal-login" title="Login or register an account" hide-footer centered>
+    <b-modal modal-class="modal-bg" v-if="showModal" id="modal-login" aria-label="Login or register an account" title="Login or register an account" hide-footer centered>
         <LoginModal/>
     </b-modal>
 

@@ -1,7 +1,7 @@
 <template>
 
 <div class="footer-wrapper">
-<button title="Click to get back to top" @click="scrollToTop()" id="scrollToTopBtn"><i class="fas fa-arrow-up"></i></button>
+<button aria-label="Click to get back to top" title="Click to get back to top" @click="scrollToTop()" id="scrollToTopBtn"><i class="fas fa-arrow-up"></i></button>
 <footer class="container-fluid d-flex justify-content-around text-sm-center text-xl-left pt-5 pb-4">
   <div class="row">
     <div class="col-6 col-sm-3 col-xl-2 contact">

@@ -2,16 +2,16 @@
   <div class="mt-5 mb-3">
     <b-tabs active-nav-item-class="" active-tab-class="" content-class="mt-5">
         
-        <b-tab title="Sign in" active>
+        <b-tab aria-label="Sign in" title="Sign in" active>
             <div class="error" v-if="error">{{error.message}}</div>
             <b-form class="text-center d-flex flex-column mx-auto w-75" @submit.prevent="pressedLogin">
                 <h2 class="mb-4">Sign in</h2>
                 <b-form-group class="pb-2">
-                    <b-form-input title="Enter your email address" type="email" placeholder="Email address..." v-model="email"></b-form-input>
+                    <b-form-input aria-label="Enter your email address" title="Enter your email address" type="email" placeholder="Email address..." v-model="email"></b-form-input>
                 </b-form-group>
                 
                 <b-form-group class="password pb-4">
-                    <b-form-input title="Enter your password" type="password" v-model="password" placeholder="Password..."></b-form-input>
+                    <b-form-input aria-label="Enter your password" title="Enter your password" type="password" v-model="password" placeholder="Password..."></b-form-input>
                     <a href="#"><small class="forgot-password d-flex justify-content-end pt-2">Forgot your password?</small></a>
                 </b-form-group>
                 <b-button type="submit" class="sign-in-button d-flex justify-content-center align-items-center">Sign in<i class="fas fa-sign-in-alt pl-2"></i></b-button>
@@ -22,16 +22,16 @@
             </b-form>
         </b-tab>
         
-        <b-tab title="Register">
+        <b-tab aria-label="Register" title="Register">
             <div v-if="error" class="error">{{error.message}}</div>
             <b-form class="text-center d-flex flex-column mx-auto w-75" @submit.prevent="pressedRegister">
                 <h2 class="mb-4">Register an account</h2>
                 <b-form-group class="pb-2">
-                    <b-form-input title="Enter your email" type="email" v-model="email" placeholder="Email address..."></b-form-input>
+                    <b-form-input aria-label="Enter your email" title="Enter your email" type="email" v-model="email" placeholder="Email address..."></b-form-input>
                 </b-form-group>
 
                 <b-form-group class="password pb-4">
-                    <b-form-input title="Enter your password" type="password" v-model="password" placeholder="Password..."></b-form-input>
+                    <b-form-input aria-label="Enter your password" title="Enter your password" type="password" v-model="password" placeholder="Password..."></b-form-input>
                 </b-form-group>
                 <b-button class="register-button" type="submit">Register</b-button>
             </b-form>
