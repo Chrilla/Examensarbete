@@ -25,16 +25,16 @@
 
     <b-collapse id="nav-collapse" class="flex-wrap" is-nav>
       <b-navbar-nav class="ml-auto">
-        <b-nav-item><router-link to="/">Home</router-link></b-nav-item>
-        <b-nav-item><router-link to="/news">News</router-link></b-nav-item>
-        <b-nav-item><router-link to="/fixtures">Fixtures</router-link></b-nav-item>
-        <b-nav-item><router-link to="/table">Table</router-link></b-nav-item>
-        <b-nav-item><router-link to="/clubs">Clubs</router-link></b-nav-item>
-        <b-nav-item><router-link to="/players">Players</router-link></b-nav-item>
-        <b-nav-item><router-link to="/stats">Stats</router-link></b-nav-item>
-        <b-nav-item><router-link to="/chat">Chat</router-link></b-nav-item>
-        <b-nav-item><router-link to="/history">History</router-link></b-nav-item>
-        <b-nav-item><router-link to="/about">About</router-link></b-nav-item>
+        <b-nav-item><router-link aria-label="Link to home" to="/">Home</router-link></b-nav-item>
+        <b-nav-item><router-link aria-label="Link to news" to="/news">News</router-link></b-nav-item>
+        <b-nav-item><router-link aria-label="Link to fixtures" to="/fixtures">Fixtures</router-link></b-nav-item>
+        <b-nav-item><router-link aria-label="Link to table" to="/table">Table</router-link></b-nav-item>
+        <b-nav-item><router-link aria-label="Link to clubs" to="/clubs">Clubs</router-link></b-nav-item>
+        <b-nav-item><router-link aria-label="Link to players" to="/players">Players</router-link></b-nav-item>
+        <b-nav-item><router-link aria-label="Link to stats" to="/stats">Stats</router-link></b-nav-item>
+        <b-nav-item><router-link aria-label="Link to chat" to="/chat">Chat</router-link></b-nav-item>
+        <b-nav-item><router-link aria-label="Link to history" to="/history">History</router-link></b-nav-item>
+        <b-nav-item><router-link aria-label="Link to about" to="/about">About</router-link></b-nav-item>
       </b-navbar-nav>
 
       <form class="ml-auto">

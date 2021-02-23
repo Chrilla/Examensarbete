@@ -118,6 +118,11 @@ import { db } from '../firebase';
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: var(--main-purple-theme);
 }
+.news-carousel:focus {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: var(--main-purple-theme);
+    outline: 1px dotted #fff;
+}
 
 .news-carousel img {
     object-fit: cover;

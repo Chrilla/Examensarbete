@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-wrap outline-screen-reader" tabindex="0" v-if="newsIndex <= newsToShow">
+  <div class="d-flex flex-wrap" v-if="newsIndex <= newsToShow">
 
         <div class="col-12 col-sm-6 news-item" v-for="newsIndex in newsToShow" :key="newsIndex.newsToShow">
           <div class="small-news">
@@ -8,7 +8,7 @@
                   <img alt="Media image from API" :src='smallNews[newsIndex - 1].newsPost.image'>
               </div>
               <div class="card">
-                <router-link to="/"><div class="card-body">
+                <router-link to="/" tabindex="0"><div class="card-body">
                     <small>{{smallNews[newsIndex - 1].newsPost.date}}</small>
                     <h5 class="card-title mt-2">{{smallNews[newsIndex - 1].newsPost.title}}</h5>
                     <p class="card-text">{{smallNews[newsIndex - 1].newsPost.text}}</p>
@@ -78,10 +78,6 @@ export default {
 </script>
 
 <style scoped>
-
-.outline-screen-reader {
-    outline: lawngreen 1;
-}
 
 .spinner {
     color: var(--link-theme);
@@ -173,6 +169,9 @@ p {
 .card-body:hover {
     text-decoration: underline;
     background-color: #f6f6f6;
+}
+a:focus {
+    outline: 2px dotted #000;
 }
 
 a {

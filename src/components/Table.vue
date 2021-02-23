@@ -18,13 +18,13 @@
                 <span class="table-stats">{{stats.position}}</span>
                 <span class="px-2"><img class="club-img" :src='stats.team.crestUrl' alt="Club crest"></span>
                 <span class="table-stats team-name">{{stats.team.name}}</span>
-                <span class="table-stats table-points float-right">{{stats.points}}</span>
+                <span aria-label="Points" class="table-stats table-points float-right">{{stats.points}}</span>
             </div></router-link>
             <hr class="hr-between">
         </div>
 
         <div class="text-center pt-3 pb-1">
-            <router-link to="/table"><span class="table-link">View full table with all statistics<i class="fas fa-arrow-right fa-xs pl-2"></i></span></router-link>
+            <router-link to="/table" aria-label="Link to full table with all statistics"><span class="table-link">View full table with all statistics<i class="fas fa-arrow-right fa-xs pl-2"></i></span></router-link>
         </div>
 
         <!-- <div v-for="stats in tableStats" v-bind:key="stats.tableStats">
