@@ -21,7 +21,7 @@
             </tr>
             <tr class="table-row" v-for="stats in tableStats" v-bind:key="stats.tableStats">
                 <td class="table-position">{{stats.position}}</td>
-                <td class="table-club"><router-link to="/"><span class="px-2"><img class="club-img" :src='stats.team.crestUrl' alt=""></span>{{stats.team.name}}</router-link></td>
+                <td class="table-club"><router-link to="/"><span class="px-2"><img class="club-img" :src='stats.team.crestUrl' alt=""></span>{{stats.team.name.slice(0, -3)}}</router-link></td>
                 <td class="table-played-games">{{stats.playedGames}}</td>
                 <td>{{stats.won}}</td>
                 <td>{{stats.draw}}</td>

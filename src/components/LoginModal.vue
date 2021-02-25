@@ -160,4 +160,8 @@ button {
     color: var(--main-purple-theme);
 }
 
+.register-button {
+    margin-bottom: 3rem;
+}
+
 </style>

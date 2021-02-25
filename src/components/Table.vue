@@ -17,7 +17,7 @@
             <router-link to="/"><div class="table-row">
                 <span class="table-stats">{{stats.position}}</span>
                 <span class="px-2"><img class="club-img" :src='stats.team.crestUrl' alt="Club crest"></span>
-                <span class="table-stats team-name">{{stats.team.name}}</span>
+                <span class="table-stats">{{stats.team.name.slice(0, -3)}}</span>
                 <span aria-label="Points" class="table-stats table-points float-right">{{stats.points}}</span>
             </div></router-link>
             <hr class="hr-between">
@@ -99,16 +99,8 @@ hr {
     margin-top: 0px;
 }
 
-.team-stats {
-    padding-left: 20px;
-}
-
 .club-img {
     height: 1.8rem;
-}
-
-.team-name {
-    font-size: 0.9rem;
 }
 
 .table-stats {

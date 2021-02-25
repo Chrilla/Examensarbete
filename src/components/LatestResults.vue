@@ -14,7 +14,7 @@
             <div class="fixture pt-2" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="limit">
                 <div v-for="result in latestResults" v-bind:key="result.latestResults">
                 <div class="d-flex justify-content-between align-items-center">
-                    <div class="col-5 col-sm-4"><span class="fixture-team">{{result.homeTeam.name}}</span></div>
+                    <div class="col-5 col-sm-4"><span class="fixture-team">{{result.homeTeam.name.slice(0, -3)}}</span></div>
 
                     <div class="d-flex">
                         <!-- <img class="d-none d-lg-block" src="@/assets/manutd-badge.svg" alt="Club crest home team"> -->
@@ -25,13 +25,13 @@
                                 <span class="score-line"></span>
                                 <span class="pl-3">{{result.score.fullTime.awayTeam}}</span>
                             </div>
-                            <small class="fixture-date text-white">{{result.utcDate.charAt(0)+""+result.utcDate.charAt(1)+""+result.utcDate.charAt(2)+""+result.utcDate.charAt(3)+""+result.utcDate.charAt(4)+""+result.utcDate.charAt(5)+""+result.utcDate.charAt(6)+""+result.utcDate.charAt(7)+""+result.utcDate.charAt(8)+""+result.utcDate.charAt(9)}}</small>
+                            <small class="fixture-date text-white">{{result.utcDate.slice(0, 10)}}</small>
                         </div>
                         <i aria-label="Club crest away team" class="d-none d-lg-block my-auto away-team-crest fas fa-tshirt fa-3x"></i>
                         <!-- <img class="d-none d-lg-block" src="@/assets/manutd-badge.svg" alt="Club crest away team"> -->
                     </div>
                     
-                    <div class="col-5 col-sm-4 text-right"><span class="fixture-team">{{result.awayTeam.name}}</span></div>
+                    <div class="col-5 col-sm-4 text-right"><span class="fixture-team">{{result.awayTeam.name.slice(0, -3)}}</span></div>
                 </div>
                 <hr>
             </div>

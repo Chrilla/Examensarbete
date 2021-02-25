@@ -1,6 +1,6 @@
 <template>
   <div class="pl-3 login-container d-flex justify-content-center align-items-center">
-      <h1 class="text-center">You are now logged in. Welcome to Premier League Hub!</h1>
+      <h1 class="text-center">You are now signed in. Welcome to Premier League Hub!</h1>
   </div>
 </template>
 

@@ -179,6 +179,8 @@ export default {
     height: 45px;
     border-radius: 50%;
     margin: 0 10px;
+    background: url("../assets/chat-user.png");
+    background-size: contain;
 }
 .wrapper .message p {
     max-width: 500px;

@@ -13,8 +13,8 @@
                     <h5 class="card-title mt-2">{{smallNews[newsIndex - 1].newsPost.title}}</h5>
                     <p class="card-text">{{smallNews[newsIndex - 1].newsPost.text}}</p>
                 </div></router-link>
-                <hr aria-hidden="true" class="mb-2 mt-0">
-                <div aria-hidden="true" class="socials d-flex justify-content-between pr-4 pb-2">
+                <hr aria-hidden="true" class="mb-0 mt-0">
+                <div aria-hidden="true" class="socials d-flex justify-content-between pr-4 pb-2 pt-2">
                     <small class="pl-4 my-auto">{{smallNews[newsIndex - 1].newsPost.author}}</small>
                     <div>
                         <i class="far fa-eye pr-1"></i><span class="pr-3 ">{{smallNews[newsIndex - 1].newsPost.views}}</span>
@@ -170,8 +170,8 @@ p {
     text-decoration: underline;
     background-color: #f6f6f6;
 }
-a:focus {
-    outline: 2px dotted #000;
+.card:hover .socials {
+    background-color: #f6f6f6;
 }
 
 a {
@@ -179,6 +179,9 @@ a {
 }
 a:hover {
   color: var(--main-purple-theme);
+}
+a:focus {
+    outline: 2px dotted #000;
 }
 
 @media (max-width: 576px) {

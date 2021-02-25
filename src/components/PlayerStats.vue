@@ -13,8 +13,8 @@
                 <th class="text-center">Goals<i class="fas fa-futbol pl-2"></i></th>
             </tr>
             <tr class="table-row" v-for="stats in playerStats" v-bind:key="stats.playerStats">
-                <td class="table-player pl-3">{{stats.player.name}}</td>
-                <td class="table-club"><router-link to="/"><span class="px-1"></span>{{stats.team.name}}</router-link></td>
+                <td class="table-player pl-3"><router-link to="/">{{stats.player.name}}</router-link></td>
+                <td class="table-club"><router-link to="/"><span class="px-1">{{stats.team.name.slice(0, -3)}}</span></router-link></td>
                 <td class="table-nationality">{{stats.player.nationality}}</td>
                 <td class="table-goals">{{stats.numberOfGoals}}</td>
             </tr>

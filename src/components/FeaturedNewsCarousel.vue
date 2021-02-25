@@ -14,7 +14,7 @@
       @sliding-end="onSlideEnd"
       v-for="newscontent in news" v-bind:key="newscontent.news"
     >
-      <router-link to="/"><b-carousel-slide>
+      <router-link to="/" tabindex="0"><b-carousel-slide>
         <template #img>
           <div class="img-div">
                 <b-badge>{{newscontent.category[0]}}</b-badge>
@@ -33,7 +33,7 @@
         </template>
       </b-carousel-slide></router-link>
 
-      <router-link to="/"><b-carousel-slide>
+      <router-link to="/" tabindex="0"><b-carousel-slide>
         <template #img>
           <div class="img-div">
                 <b-badge>{{newscontent.category[0]}}</b-badge>
@@ -52,7 +52,7 @@
         </template>
       </b-carousel-slide></router-link>
 
-      <router-link to="/"><b-carousel-slide>
+      <router-link to="/" tabindex="0"><b-carousel-slide>
         <template #img>
           <div class="img-div">
                 <b-badge>{{newscontent.category[1]}}</b-badge>
@@ -109,9 +109,19 @@ import { db } from '../firebase';
 ::v-deep .carousel-indicators {
     display: none;
 }
-
-::v-deep .carousel-control-next-icon:focus {
-  outline: 1px dotted;
+/* ::v-deep .carousel-control-next:focus,
+::v-deep .carousel-control-prev:focus {
+  outline: 1px dotted #fff;
+} */
+::v-deep .carousel-control-next-icon,
+::v-deep .carousel-control-prev-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+::v-deep .carousel-control-next-icon:hover,
+::v-deep .carousel-control-prev-icon:hover {
+  transform: scale(1.25);
+  transition: ease 0.3s;
 }
 
 .news-carousel {
@@ -160,8 +170,12 @@ import { db } from '../firebase';
     text-shadow: none;
 }
 .card-body:hover {
+  background-color: #f6f6f6;
+}
+.card-body:hover small,
+.card-body:hover h5,
+.card-body:hover p {
     text-decoration: underline;
-    background-color: #f6f6f6;
 }
 
 a {

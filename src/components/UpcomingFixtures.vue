@@ -14,22 +14,22 @@
             <div class="fixture pt-2" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="limit">
                 <div v-for="fixture in upcomingFixtures" v-bind:key="fixture.upcomingFixtures">
                 <div class="d-flex justify-content-between align-items-center">
-                    <div class="col-5 col-sm-4"><span class="fixture-team">{{fixture.homeTeam.name}}</span></div>
+                    <div class="col-5 col-sm-4"><span class="fixture-team">{{fixture.homeTeam.name.slice(0, -3)}}</span></div>
 
                     <div class="d-flex">
                         <!-- <img class="d-none d-lg-block" src="@/assets/manutd-badge.svg" alt="Home team club crest"> -->
                         <i aria-label="Club crest home team" class="d-none my-auto d-lg-block home-team-crest fas fa-tshirt fa-3x"></i>
                         <div class="text-center">
                             <div class="fixture-time mx-4">
-                                <span>{{fixture.utcDate.charAt(11)+""+fixture.utcDate.charAt(12)+""+fixture.utcDate.charAt(13)+""+fixture.utcDate.charAt(14)+""+fixture.utcDate.charAt(15)}}</span>
+                                <span>{{fixture.utcDate.slice(11, 16)}}</span>
                             </div>
-                            <small class="fixture-date text-white">{{fixture.utcDate.charAt(0)+""+fixture.utcDate.charAt(1)+""+fixture.utcDate.charAt(2)+""+fixture.utcDate.charAt(3)+""+fixture.utcDate.charAt(4)+""+fixture.utcDate.charAt(5)+""+fixture.utcDate.charAt(6)+""+fixture.utcDate.charAt(7)+""+fixture.utcDate.charAt(8)+""+fixture.utcDate.charAt(9)}}</small>
+                            <small class="fixture-date text-white">{{fixture.utcDate.slice(0, 10)}}</small>
                         </div>
                         <i aria-label="Club crest away team" class="d-none d-lg-block my-auto away-team-crest fas fa-tshirt fa-3x"></i>
                         <!-- <img class="d-none d-lg-block" src="@/assets/manutd-badge.svg" alt="Away team club crest"> -->
                     </div>
                     
-                    <div class="col-5 col-sm-4 text-right"><span class="fixture-team">{{fixture.awayTeam.name}}</span></div>
+                    <div class="col-5 col-sm-4 text-right"><span class="fixture-team">{{fixture.awayTeam.name.slice(0, -3)}}</span></div>
                 </div>
                 <hr>
             </div>
